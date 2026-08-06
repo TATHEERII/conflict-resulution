@@ -1239,11 +1239,42 @@ h1, h2, h3, h4, h5, h6 {
   background: #1e293b;
 }
 
+.portfolio-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 4px;
+  position: relative;
+  z-index: 0;
+}
+
+.news-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #64748b;
+  font-size: 0.8rem;
+  font-weight: 500;
+  position: relative;
+  z-index: 0;
+}
+
+.news-placeholder i {
+  font-size: 2rem;
+  opacity: 0.5;
+}
+
 .view-project {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin-top: 10px;
+  margin-top: 12px;
   padding: 8px 16px;
   background: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -1269,6 +1300,247 @@ h1, h2, h3, h4, h5, h6 {
 .fleet-card:hover .fleet-img-placeholder {
   color: rgba(255, 255, 255, 0.25);
   transform: none;
+}
+
+/* ===== Real Homepage Mockups ===== */
+.site-homepage {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.site-header {
+  height: 22px;
+  background: #ffffff;
+  border-bottom: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  flex-shrink: 0;
+}
+
+.site-logo-text {
+  width: 55px;
+  height: 7px;
+  background: #1e293b;
+  border-radius: 2px;
+}
+
+.site-nav {
+  display: flex;
+  gap: 5px;
+}
+
+.site-nav span {
+  width: 14px;
+  height: 3px;
+  background: #cbd5e1;
+  border-radius: 1px;
+}
+
+.site-hero {
+  flex: 1;
+  background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 8px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.site-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(245, 158, 11, 0.15) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.site-hero-tag {
+  width: 35px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 2px;
+  position: relative;
+  z-index: 1;
+}
+
+.site-hero-title {
+  width: 75%;
+  height: 8px;
+  background: #ffffff;
+  border-radius: 2px;
+  position: relative;
+  z-index: 1;
+}
+
+.site-hero-sub {
+  width: 55%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+  position: relative;
+  z-index: 1;
+}
+
+.site-hero-btns {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+  position: relative;
+  z-index: 1;
+}
+
+.site-btn {
+  height: 10px;
+  border-radius: 3px;
+}
+
+.site-btn.primary {
+  width: 35px;
+  background: var(--accent);
+}
+
+.site-btn.outline {
+  width: 30px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.site-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  padding: 6px;
+  background: #f8fafc;
+  flex-shrink: 0;
+}
+
+.site-card {
+  background: #ffffff;
+  border-radius: 3px;
+  padding: 6px;
+  border: 1px solid #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+}
+
+.site-card-icon {
+  width: 16px;
+  height: 16px;
+  background: #e2e8f0;
+  border-radius: 50%;
+}
+
+.site-card .site-line {
+  width: 70%;
+  height: 3px;
+  background: #e2e8f0;
+  border-radius: 1px;
+}
+
+.site-card .site-line.short {
+  width: 45%;
+}
+
+/* CarPart Specific */
+.carpart .site-header {
+  background: #ffffff;
+}
+
+.carpart .site-logo-text {
+  width: 60px;
+  background: #1e293b;
+}
+
+.carpart .site-hero {
+  background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+}
+
+.carpart .site-btn.primary {
+  background: #f59e0b;
+}
+
+.carpart .site-card-icon {
+  background: #fef3c7;
+}
+
+/* BabyD / Store Specific */
+.store-mockup .site-header {
+  background: #ffffff;
+}
+
+.store-mockup .site-logo-text {
+  width: 50px;
+  background: #1e293b;
+}
+
+.store-mockup .site-hero {
+  background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+}
+
+.store-mockup .site-hero-title,
+.store-mockup .site-hero-sub,
+.store-mockup .site-hero-tag {
+  background: #1e293b;
+}
+
+.store-mockup .site-btn.primary {
+  background: #ec4899;
+}
+
+.store-mockup .site-btn.outline {
+  border-color: #ec4899;
+}
+
+.store-mockup .site-card-icon {
+  background: #fce7f3;
+}
+
+.store-mockup .site-grid-3 {
+  background: #ffffff;
+}
+
+/* News Specific */
+.news-mockup .site-header {
+  background: #ffffff;
+}
+
+.news-mockup .site-logo-text {
+  width: 65px;
+  background: #1e293b;
+}
+
+.news-mockup .site-hero {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.news-mockup .site-hero-title,
+.news-mockup .site-hero-sub,
+.news-mockup .site-hero-tag {
+  background: #1e293b;
+}
+
+.news-mockup .site-btn.primary {
+  background: #6366f1;
+}
+
+.news-mockup .site-card-icon {
+  background: #e0e7ff;
+}
+
+.news-mockup .site-grid-3 {
+  background: #f8fafc;
 }
 
 .fleet-info {
