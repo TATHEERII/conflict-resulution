@@ -152,8 +152,6 @@
     checkReveal();
   }
 
-  initScrollReveal();
-
   /* === Testimonials Slider === */
   function initSlider() {
     var cards = testimonialTrack.querySelectorAll('.testimonial-card');
@@ -305,7 +303,12 @@
   /* === Portfolio Loader === */
   function renderPortfolio() {
     var portfolioGrid = document.getElementById('portfolioGrid');
-    if (!portfolioGrid) return;
+    console.log('renderPortfolio called, portfolioGrid:', portfolioGrid);
+
+    if (!portfolioGrid) {
+      console.log('portfolioGrid not found, returning');
+      return;
+    }
 
     var defaultPortfolio = [
       {
@@ -337,16 +340,23 @@
     var items = [];
     try {
       var stored = localStorage.getItem('webnexa_portfolio');
+      console.log('localStorage stored:', stored);
       if (stored) {
         items = JSON.parse(stored);
+        console.log('Parsed items from localStorage:', items);
       }
     } catch (e) {
       console.error('Failed to load portfolio', e);
     }
 
+    console.log('Items before fallback:', items);
+
     if (!items.length) {
+      console.log('Using default portfolio');
       items = defaultPortfolio;
     }
+
+    console.log('Rendering', items.length, 'items');
 
     portfolioGrid.innerHTML = '';
 
@@ -413,6 +423,9 @@
   }
 
   renderPortfolio();
+  console.log('renderPortfolio called at line 415');
+
+  initScrollReveal();
 
   /* === Prefers Reduced Motion === */
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
