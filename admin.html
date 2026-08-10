@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel — WebNexa Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <div class="admin-brand">
+        <span class="logo-icon"><i class="fas fa-code"></i></span>
+        <span class="logo-text">Web<span class="logo-accent">Nexa</span></span>
+      </div>
+      <nav class="admin-nav">
+        <a href="#" class="admin-nav-link active"><i class="fas fa-briefcase"></i> Portfolio</a>
+        <a href="index.html" class="admin-nav-link"><i class="fas fa-external-link-alt"></i> View Site</a>
+      </nav>
+    </aside>
+    <main class="admin-main">
+      <header class="admin-header">
+        <h1>Portfolio Management</h1>
+        <button class="btn btn-primary" id="addNewBtn"><i class="fas fa-plus"></i> Add New Project</button>
+      </header>
+      <div class="admin-content">
+        <div class="portfolio-table-wrapper">
+          <table class="portfolio-table">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Project Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Live URL</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="portfolioTableBody">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 id="modalTitle">Add New Project</h2>
+        <button class="modal-close" id="modalClose">&times;</button>
+      </div>
+      <form id="portfolioForm" class="portfolio-form">
+        <input type="hidden" id="editIndex">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="projectName">Project Name</label>
+            <input type="text" id="projectName" placeholder="e.g. CarPart" required>
+          </div>
+          <div class="form-group">
+            <label for="projectCategory">Category</label>
+            <input type="text" id="projectCategory" placeholder="e.g. E-Commerce" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="projectImage">Image URL</label>
+          <input type="url" id="projectImage" placeholder="https://example.com/image.png" required>
+        </div>
+        <div class="form-group">
+          <label for="projectDescription">Short Description</label>
+          <textarea id="projectDescription" rows="2" placeholder="Brief project description..."></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="projectPrice">Price</label>
+            <input type="text" id="projectPrice" placeholder="From Rs 2,999" required>
+          </div>
+          <div class="form-group">
+            <label for="projectLiveUrl">Live Project URL</label>
+            <input type="url" id="projectLiveUrl" placeholder="https://...">
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn btn-outline" id="cancelBtn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Project</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

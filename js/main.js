@@ -302,6 +302,118 @@
     }, { passive: true });
   }
 
+  /* === Portfolio Loader === */
+  function renderPortfolio() {
+    var portfolioGrid = document.getElementById('portfolioGrid');
+    if (!portfolioGrid) return;
+
+    var defaultPortfolio = [
+      {
+        name: 'CarPart',
+        category: 'Car Parts Store',
+        description: 'A complete car parts e-commerce experience with product catalog, search, and smooth checkout flow.',
+        price: 'From Rs 2,999',
+        image: 'assets/images/car-part.png',
+        liveUrl: 'https://babyd.vercel.app/'
+      },
+      {
+        name: 'Babyz Store',
+        category: 'Baby Products',
+        description: 'A complete baby products store with product catalog, categories, and a smooth checkout experience.',
+        price: 'From Rs 2,999',
+        image: 'assets/images/babyz-photo.png',
+        liveUrl: 'https://carpart-coral.vercel.app/'
+      },
+      {
+        name: 'DailyPulse CMS',
+        category: 'News Platform',
+        description: 'High-traffic media platform with a custom headless CMS, blazing-fast page loads, and multi-channel publishing.',
+        price: 'From Rs 2,999',
+        image: '',
+        liveUrl: ''
+      }
+    ];
+
+    var items = [];
+    try {
+      var stored = localStorage.getItem('webnexa_portfolio');
+      if (stored) {
+        items = JSON.parse(stored);
+      }
+    } catch (e) {
+      console.error('Failed to load portfolio', e);
+    }
+
+    if (!items.length) {
+      items = defaultPortfolio;
+    }
+
+    portfolioGrid.innerHTML = '';
+
+    items.forEach(function (item, index) {
+      var card = document.createElement('div');
+      card.className = 'fleet-card';
+      card.setAttribute('data-aos', 'fade-up');
+      if (index > 0) {
+        card.setAttribute('data-aos-delay', (index * 100).toString());
+      }
+
+      var imageHtml = '';
+      if (item.image) {
+        imageHtml = '<a href="' + escapeHtml(item.liveUrl || '#') + '" target="_blank" rel="noopener noreferrer" class="portfolio-link" aria-label="View ' + escapeHtml(item.name) + ' live project">' +
+          '<div class="fleet-img-placeholder">' +
+          '<img src="' + escapeHtml(item.image) + '" alt="' + escapeHtml(item.name) + ' website preview" class="portfolio-img">' +
+          '</div>' +
+          '</a>';
+      } else {
+        imageHtml = '<div class="fleet-img-placeholder">' +
+          '<div class="news-placeholder">' +
+          '<i class="fas fa-newspaper"></i>' +
+          '<span>News Platform</span>' +
+          '</div>' +
+          '</div>';
+      }
+
+      var liveLinkHtml = '';
+      if (item.liveUrl) {
+        liveLinkHtml = '<a href="' + escapeHtml(item.liveUrl) + '" target="_blank" rel="noopener noreferrer" class="view-project">View Live Project <i class="fas fa-external-link-alt"></i></a>';
+      }
+
+      card.innerHTML = '<div class="fleet-image">' +
+        imageHtml +
+        '<div class="fleet-badge">' + escapeHtml(item.category || 'Project') + '</div>' +
+        '<div class="portfolio-overlay">' +
+        '<div class="portfolio-metrics">' +
+        '<a href="' + escapeHtml(item.liveUrl || '#') + '" target="_blank" rel="noopener noreferrer" class="view-project">View Live Project <i class="fas fa-external-link-alt"></i></a>' +
+        '</div>' +
+        '</div>' +
+        '</div>' +
+        '<div class="fleet-info">' +
+        '<h3 class="fleet-name">' + escapeHtml(item.name) + '</h3>' +
+        '<p class="fleet-specs">' + escapeHtml(item.category || '') + '</p>' +
+        '<p class="fleet-desc">' + escapeHtml(item.description || '') + '</p>' +
+        '<div class="fleet-price">' +
+        '<span class="price">' + escapeHtml(item.price || '') + '</span>' +
+        '<span class="price-period">/ Project</span>' +
+        '</div>' +
+        '<a href="#contact" class="btn btn-primary btn-sm">Get Quote</a>' +
+        '</div>';
+
+      portfolioGrid.appendChild(card);
+    });
+  }
+
+  function escapeHtml(text) {
+    if (!text) return '';
+    return String(text)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  renderPortfolio();
+
   /* === Prefers Reduced Motion === */
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     document.querySelectorAll('.wave, .floating-element').forEach(function (el) {
