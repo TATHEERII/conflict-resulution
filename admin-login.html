@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login — WebNexa</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <div class="login-wrapper">
+    <div class="login-card">
+      <div class="login-header">
+        <div class="admin-brand">
+          <span class="logo-icon"><i class="fas fa-code"></i></span>
+          <span class="logo-text">Web<span class="logo-accent">Nexa</span></span>
+        </div>
+        <h1>Admin Panel</h1>
+        <p>Sign in to manage portfolio</p>
+      </div>
+      <form id="loginForm" class="login-form">
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="admin@webnexa.online" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter password" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+      </form>
+      <div class="login-footer">
+        <a href="index.html"><i class="fas fa-arrow-left"></i> Back to Website</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/admin-auth.js"></script>
+</body>
+</html>
