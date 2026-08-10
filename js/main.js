@@ -384,7 +384,7 @@
         '<div class="fleet-badge">' + escapeHtml(item.category || 'Project') + '</div>' +
         '<div class="portfolio-overlay">' +
         '<div class="portfolio-metrics">' +
-        '<a href="' + escapeHtml(item.liveUrl || '#') + '" target="_blank" rel="noopener noreferrer" class="view-project">View Live Project <i class="fas fa-external-link-alt"></i></a>' +
+        liveLinkHtml +
         '</div>' +
         '</div>' +
         '</div>' +

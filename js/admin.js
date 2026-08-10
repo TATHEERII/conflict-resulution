@@ -39,28 +39,103 @@
   ];
 
   function getPortfolio() {
+    console.log('Getting portfolio from storage...');
     try {
       var data = localStorage.getItem(STORAGE_KEY);
+      console.log('localStorage data:', data);
       if (data) {
         return JSON.parse(data);
       }
     } catch (e) {
       console.error('Failed to load portfolio from localStorage', e);
     }
+
+    try {
+      var cookie = getCookie(STORAGE_KEY);
+      console.log('Cookie data:', cookie);
+      if (cookie) {
+        var parsed = JSON.parse(cookie);
+        savePortfolio(parsed);
+        return parsed;
+      }
+    } catch (e) {
+      console.error('Failed to load portfolio from cookie', e);
+    }
+
+    console.log('Using default portfolio');
     return defaultPortfolio.slice();
   }
 
   function savePortfolio(items) {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+      setCookie(STORAGE_KEY, JSON.stringify(items), 365);
+      showSavedIndicator();
     } catch (e) {
-      console.error('Failed to save portfolio to localStorage', e);
+      console.error('Failed to save portfolio', e);
       showToast('Failed to save. Storage may be full.', 'error');
     }
   }
 
+  function getCookie(name) {
+    var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    if (match) return match[2];
+    return null;
+  }
+
+  function setCookie(name, value, days) {
+    var date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    var expires = 'expires=' + date.toUTCString();
+    document.cookie = name + '=' + value + ';' + expires + ';path=/;SameSite=Lax';
+  }
+
+  function showSavedIndicator() {
+    var existing = document.getElementById('saveIndicator');
+    if (existing) existing.remove();
+
+    var indicator = document.createElement('div');
+    indicator.id = 'saveIndicator';
+    indicator.innerHTML = '<i class="fas fa-check-circle"></i> Saved to browser';
+    indicator.style.cssText = 'position:fixed;bottom:24px;left:24px;background:#22c55e;color:#fff;padding:10px 18px;border-radius:8px;font-size:0.85rem;font-weight:600;z-index:2000;box-shadow:0 4px 12px rgba(0,0,0,0.15);display:flex;align-items:center;gap:8px;animation:fadeInOut 2.5s ease forwards;';
+    document.body.appendChild(indicator);
+
+    var style = document.createElement('style');
+    style.textContent = '@keyframes fadeInOut{0%{opacity:0;transform:translateY(10px)}15%{opacity:1;transform:translateY(0)}85%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(-10px)}}';
+    document.head.appendChild(style);
+
+    setTimeout(function () {
+      indicator.remove();
+      style.remove();
+    }, 2600);
+  }
+
   function renderTable() {
     var items = getPortfolio();
+    var storageSource = 'default';
+    var storageClass = 'default';
+    try {
+      if (localStorage.getItem(STORAGE_KEY)) {
+        storageSource = 'localStorage';
+        storageClass = 'localStorage';
+      } else if (getCookie(STORAGE_KEY)) {
+        storageSource = 'cookie backup';
+        storageClass = 'cookie';
+      } else {
+        storageSource = 'default';
+        storageClass = 'default';
+      }
+    } catch (e) {
+      storageSource = 'default';
+      storageClass = 'default';
+    }
+
+    var statusEl = document.getElementById('storageStatus');
+    if (statusEl) {
+      statusEl.className = 'storage-status ' + storageClass;
+      statusEl.innerHTML = '<i class="fas fa-database"></i> Data source: ' + storageSource + ' | Items: ' + items.length;
+    }
+
     tableBody.innerHTML = '';
 
     if (items.length === 0) {

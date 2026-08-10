@@ -22,8 +22,13 @@
     </aside>
     <main class="admin-main">
       <header class="admin-header">
-        <h1>Portfolio Management</h1>
-        <button class="btn btn-primary" id="addNewBtn"><i class="fas fa-plus"></i> Add New Project</button>
+        <div class="admin-header-top">
+          <h1>Portfolio Management</h1>
+          <button class="btn btn-primary" id="addNewBtn"><i class="fas fa-plus"></i> Add New Project</button>
+        </div>
+        <div class="storage-status" id="storageStatus">
+          <i class="fas fa-spinner fa-spin"></i> Loading storage...
+        </div>
       </header>
       <div class="admin-content">
         <div class="portfolio-table-wrapper">
