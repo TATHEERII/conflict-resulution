@@ -220,12 +220,9 @@
     var name = document.getElementById('fullName').value.trim();
     var email = document.getElementById('email').value.trim();
     var phone = document.getElementById('phone').value.trim();
-    var service = document.getElementById('service').value;
-    var date = document.getElementById('date').value;
     var guests = document.getElementById('guests').value;
-    var details = document.getElementById('message').value.trim();
 
-    if (!name || !email || !phone || !service || !date || !guests) {
+    if (!name || !email || !phone || !guests) {
       showToast('Please fill in all required fields.', 'error');
       return;
     }
@@ -242,20 +239,15 @@
       return;
     }
 
-    var messageText = 'New WebNexa Inquiry:%0A%0A';
-    messageText += 'Name: ' + encodeURIComponent(name) + '%0A';
-    messageText += 'Email: ' + encodeURIComponent(email) + '%0A';
-    messageText += 'Phone: ' + encodeURIComponent(phone) + '%0A';
-    messageText += 'Service: ' + encodeURIComponent(service) + '%0A';
-    messageText += 'Budget: ' + encodeURIComponent(date) + '%0A';
-    messageText += 'Company Size: ' + encodeURIComponent(guests) + '%0A';
-    messageText += 'Details: ' + encodeURIComponent(details);
+    var homepageData = {
+      name: name,
+      email: email,
+      phone: phone,
+      companySize: guests
+    };
 
-    var whatsappUrl = 'https://wa.me/923008932525?text=' + messageText;
-    window.open(whatsappUrl, '_blank');
-
-    showToast('Redirecting to WhatsApp...', 'success');
-    bookingForm.reset();
+    localStorage.setItem('webnexa_homepage_inquiry', JSON.stringify(homepageData));
+    window.location.href = 'requirements.html';
   });
 
   /* === Toast Notification === */
