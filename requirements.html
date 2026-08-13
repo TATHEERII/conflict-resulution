@@ -42,195 +42,257 @@
   <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
 
   <main id="main-content">
-    <section class="req-hero">
-      <div class="container">
-        <p class="hero-tagline">Apni Website ke Requirements</p>
-        <h1 class="hero-title">Batayein Aapko <span class="text-gradient">Kya Chahiye</span>?</h1>
-        <p class="hero-subtitle">Sirf 2 simple steps mein apni requirements bata dein. Humein batayein aapke liye kaun si website type best hai.</p>
-      </div>
-    </section>
+    <div class="req-layout">
+      <aside class="progress-sidebar" id="progressSidebar">
+        <nav class="progress-nav">
+          <div class="progress-step" data-step="1" id="sidebarStep1">
+            <div class="step-indicator">
+              <div class="step-circle">
+                <span class="step-number">1</span>
+                <i class="fas fa-check step-check"></i>
+              </div>
+              <div class="step-line"></div>
+            </div>
+            <div class="step-content">
+              <span class="step-title">Start Your Journey</span>
+              <span class="step-desc">Fill your details on homepage</span>
+              <span class="step-urgency">Required</span>
+            </div>
+          </div>
+          <div class="progress-step" data-step="2" id="sidebarStep2">
+            <div class="step-indicator">
+              <div class="step-circle">
+                <span class="step-number">2</span>
+                <i class="fas fa-check step-check"></i>
+              </div>
+              <div class="step-line"></div>
+            </div>
+            <div class="step-content">
+              <span class="step-title">Choose Website Type</span>
+              <span class="step-desc">Select your website category</span>
+              <span class="step-urgency">Important</span>
+            </div>
+          </div>
+          <div class="progress-step" data-step="3" id="sidebarStep3">
+            <div class="step-indicator">
+              <div class="step-circle">
+                <span class="step-number">3</span>
+                <i class="fas fa-check step-check"></i>
+              </div>
+              <div class="step-line"></div>
+            </div>
+            <div class="step-content">
+              <span class="step-title">Select Features</span>
+              <span class="step-desc">Choose what you need</span>
+              <span class="step-urgency">Important</span>
+            </div>
+          </div>
+          <div class="progress-step" data-step="4" id="sidebarStep4">
+            <div class="step-indicator">
+              <div class="step-circle">
+                <span class="step-number">4</span>
+                <i class="fas fa-check step-check"></i>
+              </div>
+            </div>
+            <div class="step-content">
+              <span class="step-title">Submit & Connect</span>
+              <span class="step-desc">Send requirements on WhatsApp</span>
+              <span class="step-urgency">Final Step</span>
+            </div>
+          </div>
+        </nav>
+      </aside>
 
-    <div class="homepage-data-banner hidden" id="homepageDataBanner">
-      <div class="container">
-        <div class="banner-content">
-          <i class="fas fa-check-circle"></i>
-          <div class="banner-text">
-            <strong>Aapke homepage se data save ho gaya hai</strong>
-            <span id="bannerDetails"></span>
+      <div class="req-content">
+        <section class="req-hero">
+          <div class="container">
+             <p class="hero-tagline">Your Website Requirements</p>
+             <h1 class="hero-title">Tell Us What You <span class="text-gradient">Need</span>?</h1>
+             <p class="hero-subtitle">Complete all 4 steps to submit your requirements. Our team will contact you within 24 hours.</p>
+          </div>
+        </section>
+
+        <div class="homepage-data-banner hidden" id="homepageDataBanner">
+          <div class="container">
+            <div class="banner-content">
+              <i class="fas fa-check-circle"></i>
+              <div class="banner-text">
+                 <strong>Step 1 Complete!</strong>
+                <span id="bannerDetails"></span>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <section class="req-section" id="step1">
-      <div class="container">
-        <div class="section-header">
-          <p class="section-tag">Step 1</p>
-          <h2 class="section-title">Website Type <span class="text-gradient">Choose Karein</span></h2>
-          <p class="section-desc">Niche diye gaye options mein se apni website ki type select karein. Agar exact type nahi mil rahi to "Other" choose karein.</p>
-        </div>
-        <div class="types-grid" id="typesGrid">
+        <section class="req-section" id="step1">
+          <div class="container">
+            <div class="section-header">
+              <p class="section-tag">Step 2</p>
+              <h2 class="section-title">Website Type <span class="text-gradient">Choose</span></h2>
+              <p class="section-desc">Select your website type from the options below. If you don't find the exact type, choose "Other".</p>
+            </div>
+            <div class="types-grid" id="typesGrid">
           <div class="type-card" data-type="business">
             <div class="type-icon"><i class="fas fa-building"></i></div>
             <h3 class="type-title">Business / Company</h3>
-            <p class="type-desc">Apni company ya business ke liye professional website</p>
-            <span class="type-example">Jaise: Restaurant, Clinic, Office</span>
+            <p class="type-desc">Professional website for your company or business</p>
+            <span class="type-example">Example: Restaurant, Clinic, Office</span>
           </div>
           <div class="type-card" data-type="ecommerce">
             <div class="type-icon"><i class="fas fa-shopping-cart"></i></div>
             <h3 class="type-title">E-Commerce Store</h3>
-            <p class="type-desc">Online mein products bechne ke liye website</p>
-            <span class="type-example">Jaise: Amazon, Daraz jaisi store</span>
+            <p class="type-desc">Website for selling products online</p>
+            <span class="type-example">Example: Amazon, Daraz-like store</span>
           </div>
           <div class="type-card" data-type="blog">
             <div class="type-icon"><i class="fas fa-pen-nib"></i></div>
             <h3 class="type-title">Blog</h3>
-            <p class="type-desc">Articles likhne aur share karne ke liye</p>
-            <span class="type-example">Jaise: News blog, Personal blog</span>
+            <p class="type-desc">For writing and sharing articles</p>
+            <span class="type-example">Example: News blog, Personal blog</span>
           </div>
           <div class="type-card" data-type="news">
             <div class="type-icon"><i class="fas fa-newspaper"></i></div>
             <h3 class="type-title">News / Magazine</h3>
-            <p class="type-desc">Khabrein aur articles publish karne ke liye</p>
-            <span class="type-example">Jaise: Daily newspaper, Magazine</span>
+            <p class="type-desc">For publishing news and articles</p>
+            <span class="type-example">Example: Daily newspaper, Magazine</span>
           </div>
           <div class="type-card" data-type="portfolio">
             <div class="type-icon"><i class="fas fa-briefcase"></i></div>
             <h3 class="type-title">Portfolio</h3>
-            <p class="type-desc">Apne projects aur skills dikhane ke liye</p>
-            <span class="type-example">Jaise: Designer, Developer ka portfolio</span>
+            <p class="type-desc">To showcase your projects and skills</p>
+            <span class="type-example">Example: Designer, Developer portfolio</span>
           </div>
           <div class="type-card" data-type="education">
             <div class="type-icon"><i class="fas fa-graduation-cap"></i></div>
             <h3 class="type-title">Education / E-Learning</h3>
-            <p class="type-desc">Online courses aur lessons ke liye</p>
-            <span class="type-example">Jaise: Online classes, Course platform</span>
+            <p class="type-desc">For online courses and lessons</p>
+            <span class="type-example">Example: Online classes, Course platform</span>
           </div>
           <div class="type-card" data-type="school">
             <div class="type-icon"><i class="fas fa-school"></i></div>
             <h3 class="type-title">School / University</h3>
-            <p class="type-desc">Admissions, results, aur notices ke liye</p>
-            <span class="type-example">Jaise: College website, School portal</span>
+            <p class="type-desc">For admissions, results, and notices</p>
+            <span class="type-example">Example: College website, School portal</span>
           </div>
           <div class="type-card" data-type="government">
             <div class="type-icon"><i class="fas fa-landmark"></i></div>
             <h3 class="type-title">Government</h3>
-            <p class="type-desc">Departments aur public services ke liye</p>
-            <span class="type-example">Jaise: Govt forms, Citizen portal</span>
+            <p class="type-desc">For departments and public services</p>
+            <span class="type-example">Example: Government forms, Citizen portal</span>
           </div>
           <div class="type-card" data-type="social">
             <div class="type-icon"><i class="fas fa-users"></i></div>
             <h3 class="type-title">Social Media</h3>
-            <p class="type-desc">Logon ke profiles aur interaction ke liye</p>
-            <span class="type-example">Jaise: Facebook, Instagram jaisi</span>
+            <p class="type-desc">For user profiles and interaction</p>
+            <span class="type-example">Example: Facebook, Instagram-like</span>
           </div>
           <div class="type-card" data-type="forum">
             <div class="type-icon"><i class="fas fa-comments"></i></div>
             <h3 class="type-title">Forum / Community</h3>
-            <p class="type-desc">Discussion aur community ke liye</p>
-            <span class="type-example">Jaise: Reddit, Quora jaisi</span>
+            <p class="type-desc">For discussions and community</p>
+            <span class="type-example">Example: Reddit, Quora-like</span>
           </div>
           <div class="type-card" data-type="marketplace">
             <div class="type-icon"><i class="fas fa-store"></i></div>
             <h3 class="type-title">Marketplace</h3>
-            <p class="type-desc">Multiple sellers ke liye platform</p>
-            <span class="type-example">Jaise: OLX, Fiverr jaisi</span>
+            <p class="type-desc">Platform for multiple sellers</p>
+            <span class="type-example">Example: OLX, Fiverr-like</span>
           </div>
           <div class="type-card" data-type="job">
             <div class="type-icon"><i class="fas fa-briefcase"></i></div>
             <h3 class="type-title">Job Portal</h3>
-            <p class="type-desc">Jobs dhundhne aur apply karne ke liye</p>
-            <span class="type-example">Jaise: Indeed, Rozee.pk jaisi</span>
+            <p class="type-desc">For finding and applying to jobs</p>
+            <span class="type-example">Example: Indeed, Rozee.pk-like</span>
           </div>
           <div class="type-card" data-type="realestate">
             <div class="type-icon"><i class="fas fa-home"></i></div>
             <h3 class="type-title">Real Estate</h3>
-            <p class="type-desc">Properties ke listings aur inquiry ke liye</p>
-            <span class="type-example">Jaise: Property dealer ki website</span>
+            <p class="type-desc">For property listings and inquiries</p>
+            <span class="type-example">Example: Real estate agent website</span>
           </div>
           <div class="type-card" data-type="restaurant">
             <div class="type-icon"><i class="fas fa-utensils"></i></div>
             <h3 class="type-title">Restaurant / Food</h3>
-            <p class="type-desc">Menu, order, aur reservation ke liye</p>
-            <span class="type-example">Jaise: Foodpanda, Restaurant website</span>
+            <p class="type-desc">For menu, orders, and reservations</p>
+            <span class="type-example">Example: Foodpanda, Restaurant website</span>
           </div>
           <div class="type-card" data-type="travel">
             <div class="type-icon"><i class="fas fa-plane"></i></div>
             <h3 class="type-title">Travel / Booking</h3>
-            <p class="type-desc">Hotels, flights, aur trips ke liye</p>
-            <span class="type-example">Jaise: Booking.com, Travel agency</span>
+            <p class="type-desc">For hotels, flights, and trips</p>
+            <span class="type-example">Example: Booking.com, Travel agency</span>
           </div>
           <div class="type-card" data-type="healthcare">
             <div class="type-icon"><i class="fas fa-heartbeat"></i></div>
             <h3 class="type-title">Healthcare</h3>
-            <p class="type-desc">Doctors, appointments, aur services ke liye</p>
-            <span class="type-example">Jaise: Hospital, Clinic website</span>
+            <p class="type-desc">For doctors, appointments, and services</p>
+            <span class="type-example">Example: Hospital, Clinic website</span>
           </div>
           <div class="type-card" data-type="finance">
             <div class="type-icon"><i class="fas fa-university"></i></div>
             <h3 class="type-title">Finance / Banking</h3>
-            <p class="type-desc">Account aur transactions ke liye</p>
-            <span class="type-example">Jaise: Bank, Payment gateway</span>
+            <p class="type-desc">For accounts and transactions</p>
+            <span class="type-example">Example: Bank, Payment gateway</span>
           </div>
           <div class="type-card" data-type="saas">
             <div class="type-icon"><i class="fas fa-cloud"></i></div>
             <h3 class="type-title">SaaS / Web App</h3>
-            <p class="type-desc">Software service ke liye application</p>
-            <span class="type-example">Jaise: Tool, Dashboard, SaaS product</span>
+            <p class="type-desc">Application for software services</p>
+            <span class="type-example">Example: Tool, Dashboard, SaaS product</span>
           </div>
           <div class="type-card" data-type="membership">
             <div class="type-icon"><i class="fas fa-id-card"></i></div>
             <h3 class="type-title">Membership Website</h3>
-            <p class="type-desc">Members ke liye exclusive content</p>
-            <span class="type-example">Jaise: Course library, Premium content</span>
+            <p class="type-desc">Exclusive content for members</p>
+            <span class="type-example">Example: Course library, Premium content</span>
           </div>
           <div class="type-card" data-type="directory">
             <div class="type-icon"><i class="fas fa-list"></i></div>
             <h3 class="type-title">Directory / Listing</h3>
-            <p class="type-desc">Businesses aur services ki listing ke liye</p>
-            <span class="type-example">Jaise: Business directory, Yellow pages</span>
+            <p class="type-desc">For listing businesses and services</p>
+            <span class="type-example">Example: Business directory, Yellow pages</span>
           </div>
           <div class="type-card" data-type="nonprofit">
             <div class="type-icon"><i class="fas fa-hand-holding-heart"></i></div>
             <h3 class="type-title">Nonprofit / Charity</h3>
-            <p class="type-desc">Donations aur campaigns ke liye</p>
-            <span class="type-example">Jaise: NGO, Charity organization</span>
+            <p class="type-desc">For donations and campaigns</p>
+            <span class="type-example">Example: NGO, Charity organization</span>
           </div>
           <div class="type-card" data-type="entertainment">
             <div class="type-icon"><i class="fas fa-film"></i></div>
             <h3 class="type-title">Entertainment</h3>
-            <p class="type-desc">Videos, music, aur content ke liye</p>
-            <span class="type-example">Jaise: YouTube jaisi, Music streaming</span>
+            <p class="type-desc">For videos, music, and content</p>
+            <span class="type-example">Example: YouTube-like, Music streaming</span>
           </div>
           <div class="type-card" data-type="personal">
             <div class="type-icon"><i class="fas fa-user"></i></div>
             <h3 class="type-title">Personal Website</h3>
-            <p class="type-desc">Apni personal branding ke liye</p>
-            <span class="type-example">Jaise: Resume, Personal blog</span>
+            <p class="type-desc">For personal branding</p>
+            <span class="type-example">Example: Resume, Personal blog</span>
           </div>
           <div class="type-card" data-type="landing">
             <div class="type-icon"><i class="fas fa-rocket"></i></div>
             <h3 class="type-title">Landing Page</h3>
-            <p class="type-desc">Product ya service ka aik single page</p>
-            <span class="type-example">Jaise: Product launch, Campaign page</span>
+            <p class="type-desc">A single page for product or service</p>
+            <span class="type-example">Example: Product launch, Campaign page</span>
           </div>
           <div class="type-card" data-type="wiki">
             <div class="type-icon"><i class="fas fa-book"></i></div>
             <h3 class="type-title">Wiki / Knowledge Base</h3>
-            <p class="type-desc">Articles aur information ke liye</p>
-            <span class="type-example">Jaise: Wikipedia jaisi, Help center</span>
+            <p class="type-desc">For articles and information</p>
+            <span class="type-example">Example: Wikipedia-like, Help center</span>
           </div>
           <div class="type-card" data-type="webportal">
             <div class="type-icon"><i class="fas fa-th-large"></i></div>
             <h3 class="type-title">Web Portal</h3>
-            <p class="type-desc">Multiple services ka aik platform</p>
-            <span class="type-example">Jaise: Student portal, Employee portal</span>
+            <p class="type-desc">A platform with multiple services</p>
+            <span class="type-example">Example: Student portal, Employee portal</span>
           </div>
           <div class="type-card" data-type="other">
             <div class="type-icon"><i class="fas fa-ellipsis-h"></i></div>
             <h3 class="type-title">Other / Custom</h3>
-            <p class="type-desc">Koi aur special requirement ho to</p>
-            <span class="type-example">Niche batayein apni exact requirement</span>
+            <p class="type-desc">If you have any other special requirement</p>
+            <span class="type-example">Tell us your exact requirement below</span>
           </div>
         </div>
       </div>
@@ -239,19 +301,19 @@
     <section class="req-section req-form-section hidden" id="step2">
       <div class="container">
         <div class="section-header">
-          <p class="section-tag">Step 2</p>
-          <h2 class="section-title">Requirements <span class="text-gradient">Select Karein</span></h2>
-          <p class="section-desc">Aapke selected website type ke liye common features niche diye gaye hain. Jo features chahiye unko tick kar dein. Baad mein apne added requirements bhi likh sakte hain.</p>
+          <p class="section-tag">Step 3</p>
+          <h2 class="section-title">Requirements <span class="text-gradient">Select</span></h2>
+          <p class="section-desc">Below are common features for your selected website type. Tick the features you need. You can also add your custom requirements later.</p>
         </div>
 
         <div class="homepage-summary hidden" id="homepageSummary">
           <div class="homepage-summary-header">
             <i class="fas fa-check-circle"></i>
-            <h3>Aapke Homepage se Data</h3>
+              <h3>Data from Homepage</h3>
           </div>
           <div class="homepage-summary-grid">
             <div class="summary-item">
-              <span class="summary-label">Naam:</span>
+              <span class="summary-label">Name:</span>
               <span class="summary-value" id="summaryName"></span>
             </div>
             <div class="summary-item">
@@ -274,7 +336,7 @@
           <div class="selected-type-badge" id="selectedTypeBadge">
             <i class="fas fa-check-circle"></i>
             <span id="selectedTypeName">Business / Company Website</span>
-            <button type="button" class="badge-change" id="changeTypeBtn" title="Website type change karein">
+             <button type="button" class="badge-change" id="changeTypeBtn" title="Change website type">
               <i class="fas fa-pen"></i> Change
             </button>
           </div>
@@ -282,9 +344,9 @@
           <div class="personal-info-section hidden" id="personalInfoSection">
             <div class="form-row">
               <div class="form-group">
-                <label for="reqName">Apka Naam <span class="required">*</span></label>
-                <input type="text" id="reqName" placeholder="Jaise: Ahmed Ali" required>
-                <span class="field-example">Example: Apka poora naam</span>
+                 <label for="reqName">Your Name <span class="required">*</span></label>
+                 <input type="text" id="reqName" placeholder="Example: Ahmed Ali" required>
+                 <span class="field-example">Example: Your full name</span>
               </div>
               <div class="form-group">
                 <label for="reqEmail">Email Address <span class="required">*</span></label>
@@ -305,16 +367,16 @@
           <div class="form-row">
             <div class="form-group">
               <label for="reqBudget">Budget Range</label>
-              <select id="reqBudget">
-                <option value="">Budget select karein</option>
-                <option value="under-50k">Under Rs 50,000</option>
-                <option value="50k-1lac">Rs 50,000 - 1,00,000</option>
-                <option value="1lac-3lac">Rs 1,00,000 - 3,00,000</option>
-                <option value="3lac-5lac">Rs 3,00,000 - 5,00,000</option>
-                <option value="above-5lac">Above Rs 5,00,000</option>
-                <option value="not-sure">Abhi confirm nahi</option>
-              </select>
-              <span class="field-example">Apne budget ka andaza</span>
+                 <select id="reqBudget">
+                   <option value="">Select budget</option>
+                   <option value="under-50k">Under Rs 50,000</option>
+                   <option value="50k-1lac">Rs 50,000 - 1,00,000</option>
+                   <option value="1lac-3lac">Rs 1,00,000 - 3,00,000</option>
+                   <option value="3lac-5lac">Rs 3,00,000 - 5,00,000</option>
+                   <option value="above-5lac">Above Rs 5,00,000</option>
+                   <option value="not-sure">Not sure yet</option>
+                 </select>
+                 <span class="field-example">Estimate your budget</span>
             </div>
           </div>
 
@@ -352,24 +414,24 @@
 
           <div class="form-row">
             <div class="form-group">
-              <label for="reqReference">Koi Example Website</label>
-              <input type="url" id="reqReference" placeholder="https://example.com">
-              <span class="field-example">Agar koi design pasand hai to link dein</span>
+               <label for="reqReference">Reference Website</label>
+               <input type="url" id="reqReference" placeholder="https://example.com">
+               <span class="field-example">If you like any design, share the link</span>
             </div>
           </div>
 
           <div class="features-section">
             <div class="features-header">
               <div>
-                <h3 class="features-heading">
-                  <i class="fas fa-check-square"></i>
-                  Aapke liye yeh features chahiye
-                </h3>
-                <p class="features-subtext">Jo features chahiye unko tick kar dein. Sab se zaroori features select karein.</p>
+                 <h3 class="features-heading">
+                   <i class="fas fa-check-square"></i>
+                   Features You Need
+                 </h3>
+                 <p class="features-subtext">Tick the features you need. Select the most important features.</p>
               </div>
               <div class="features-actions">
                 <button type="button" class="btn btn-sm btn-outline" id="selectAllFeatures">
-                  <i class="fas fa-check-double"></i> Sab Select Karein
+                  <i class="fas fa-check-double"></i> Select All
                 </button>
                 <button type="button" class="btn btn-sm btn-outline" id="clearAllFeatures">
                   <i class="fas fa-times"></i> Clear
@@ -379,34 +441,34 @@
             <div class="features-grid" id="featuresGrid">
             </div>
             <div class="features-summary" id="featuresSummary">
-              <i class="fas fa-info-circle"></i>
-              <span id="featuresSummaryText">Abhi koi feature select nahi kiya</span>
+               <i class="fas fa-info-circle"></i>
+               <span id="featuresSummaryText">No features selected yet</span>
             </div>
           </div>
 
           <div class="manual-section">
-            <h3 class="manual-heading">
-              <i class="fas fa-plus-circle"></i>
-              Kuch Aur Add Karna Hai?
-            </h3>
-            <p class="manual-subtext">Agar upar list mein aapki koi requirement nahi hai, to yahan likh dein. Har requirement ko alag line mein likhein.</p>
-            <div class="form-group">
-              <label for="manualRequirements">Apni Added Requirements</label>
-              <textarea id="manualRequirements" placeholder="Jaise: Special payment gateway, Multi-language support, Live chat, etc." rows="4"></textarea>
-              <span class="field-example">Har requirement ko alag line mein likhein</span>
-            </div>
+             <h3 class="manual-heading">
+               <i class="fas fa-plus-circle"></i>
+               Add More Requirements?
+             </h3>
+             <p class="manual-subtext">If you don't find your requirement in the list above, write it here. Write each requirement on a new line.</p>
+             <div class="form-group">
+               <label for="manualRequirements">Your Custom Requirements</label>
+               <textarea id="manualRequirements" placeholder="Example: Special payment gateway, Multi-language support, Live chat, etc." rows="4"></textarea>
+               <span class="field-example">Write each requirement on a new line</span>
+             </div>
           </div>
 
           <div class="form-actions">
-            <button type="button" class="btn btn-outline" id="backToTypes">
-              <i class="fas fa-arrow-left"></i> Wapas Type Badlein
-            </button>
+             <button type="button" class="btn btn-outline" id="backToTypes">
+               <i class="fas fa-arrow-left"></i> Change Type
+             </button>
             <button type="button" class="btn btn-primary" id="previewBtn">
               <i class="fas fa-eye"></i> Preview
             </button>
-            <button type="submit" class="btn btn-primary" id="submitRequirements">
-              <i class="fab fa-whatsapp"></i> WhatsApp par Bhejein
-            </button>
+             <button type="submit" class="btn btn-primary" id="submitRequirements">
+               <i class="fab fa-whatsapp"></i> Send on WhatsApp
+             </button>
           </div>
         </div>
         </form>
@@ -429,6 +491,7 @@
           </button>
         </div>
       </div>
+      </div>
     </div>
   </main>
 
@@ -440,7 +503,7 @@
             <span class="logo-icon"><i class="fas fa-code"></i></span>
             <span class="logo-text">Web<span class="logo-accent">Nexa</span></span>
           </a>
-          <p class="footer-desc">Premium web design aur digital services. Aapke business ko online le jaate hain.</p>
+          <p class="footer-desc">Premium web design and digital services. We take your business online.</p>
         </div>
         <div class="footer-links">
           <h4>Quick Links</h4>

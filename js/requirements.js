@@ -549,6 +549,8 @@
       });
       updateFeaturesSummary();
     }
+
+    updateProgressIndicator();
   }
 
   function clearRequirementsState() {
@@ -572,6 +574,7 @@
   var clearAllFeaturesBtn = document.getElementById('clearAllFeatures');
   var featuresSummaryText = document.getElementById('featuresSummaryText');
   var toast = document.getElementById('toast');
+  var sidebarSteps = document.querySelectorAll('.progress-step');
 
   function showToast(message, type) {
     toast.textContent = message;
@@ -584,14 +587,43 @@
     }, 4000);
   }
 
+  function updateProgressIndicator() {
+    var step1 = document.getElementById('sidebarStep1');
+    var step2 = document.getElementById('sidebarStep2');
+    var step3 = document.getElementById('sidebarStep3');
+    var step4 = document.getElementById('sidebarStep4');
+
+    [step1, step2, step3, step4].forEach(function (s) {
+      if (s) s.classList.remove('active', 'completed');
+    });
+
+    if (!homepageData) {
+      step1.classList.add('active');
+    } else if (!selectedType) {
+      step1.classList.add('completed');
+      step2.classList.add('active');
+    } else if (selectedType && selectedFeatures.size === 0) {
+      step1.classList.add('completed');
+      step2.classList.add('completed');
+      step3.classList.add('active');
+    } else {
+      step1.classList.add('completed');
+      step2.classList.add('completed');
+      step3.classList.add('completed');
+      step4.classList.add('active');
+    }
+  }
+
   function scrollToStep2() {
     step2.classList.remove('hidden');
     step2.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    updateProgressIndicator();
   }
 
   function scrollToStep1() {
     step2.classList.add('hidden');
     document.getElementById('step1').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    updateProgressIndicator();
   }
 
   function updateFeaturesSummary() {
@@ -634,6 +666,7 @@
           item.classList.add('selected');
         }
         updateFeaturesSummary();
+        updateProgressIndicator();
       });
 
       featuresGrid.appendChild(item);
@@ -856,6 +889,7 @@
       cards.forEach(function (c) { c.classList.remove('selected'); });
       selectedType = null;
       saveRequirementsState();
+      updateProgressIndicator();
     });
 
     selectAllFeaturesBtn.addEventListener('click', function () {
@@ -866,6 +900,7 @@
         item.classList.add('selected');
       });
       updateFeaturesSummary();
+      updateProgressIndicator();
       saveRequirementsState();
     });
 
@@ -876,6 +911,7 @@
         item.classList.remove('selected');
       });
       updateFeaturesSummary();
+      updateProgressIndicator();
       saveRequirementsState();
     });
 
@@ -954,6 +990,9 @@
       if (summary) summary.classList.add('hidden');
       var personalSection = document.getElementById('personalInfoSection');
       if (personalSection) personalSection.classList.remove('hidden');
+      selectedType = null;
+      selectedFeatures.clear();
+      updateProgressIndicator();
     });
 
     previewModalClose.addEventListener('click', function () {
@@ -986,6 +1025,7 @@
       });
       el.addEventListener('change', function () {
         saveRequirementsState();
+        updateProgressIndicator();
       });
     });
 
@@ -993,6 +1033,7 @@
     renderFeatures = function (typeId) {
       origRenderFeatures(typeId);
       saveRequirementsState();
+      updateProgressIndicator();
     };
   }
 
@@ -1022,6 +1063,7 @@
       restoreRequirementsState();
     }
 
+    updateProgressIndicator();
     initForm();
   }
 
