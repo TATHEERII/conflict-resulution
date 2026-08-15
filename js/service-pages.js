@@ -65,4 +65,30 @@
       }
     });
   });
+
+  function initScrollReveal() {
+    var elements = document.querySelectorAll('[data-aos]');
+
+    elements.forEach(function (el) {
+      var delay = parseInt(el.getAttribute('data-aos-delay') || '0', 10);
+      if (delay > 0) {
+        el.style.transitionDelay = delay + 'ms';
+      }
+    });
+
+    function checkReveal() {
+      elements.forEach(function (el) {
+        if (el.classList.contains('aos-animated')) return;
+        var rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 60) {
+          el.classList.add('aos-animated');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', checkReveal, { passive: true });
+    checkReveal();
+  }
+
+  initScrollReveal();
 })();
