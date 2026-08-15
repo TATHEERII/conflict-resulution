@@ -15,29 +15,31 @@
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <header class="header" id="header">
-    <div class="container header-inner">
-      <a href="index.html" class="logo" aria-label="WebNexa Home">
-        <span class="logo-icon"><i class="fas fa-code"></i></span>
-        <span class="logo-text">Web<span class="logo-accent">Nexa</span></span>
-      </a>
-      <nav class="nav" id="mainNav" aria-label="Main navigation">
-        <ul class="nav-list">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="index.html#services" class="nav-link">Services</a></li>
-          <li><a href="index.html#about" class="nav-link">About</a></li>
-          <li><a href="index.html#portfolio" class="nav-link">Portfolio</a></li>
-          <li><a href="index.html#testimonials" class="nav-link">Reviews</a></li>
-          <li><a href="requirements.html" class="nav-link active">Requirements</a></li>
-          <li><a href="index.html#contact" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
-      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainNav">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-      </button>
-    </div>
+  <header class="navbar" id="header">
+    <a href="index.html" class="logo" aria-label="WebNexa Home">
+      <div class="logo-icon">&lt;/&gt;</div>
+      <span class="logo-white">Web</span><span class="logo-purple">Nexa</span>
+    </a>
+
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#portfolio">Portfolio</a>
+      <a href="index.html#testimonials">Reviews</a>
+      <a href="requirements.html" class="active">Requirements</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <a href="requirements.html" class="talk-btn">
+      Let's Talk <span>→</span>
+    </a>
+
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainNav">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
   </header>
   <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
 
@@ -561,8 +563,8 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="logo">
-            <span class="logo-icon"><i class="fas fa-code"></i></span>
-            <span class="logo-text">Web<span class="logo-accent">Nexa</span></span>
+            <div class="logo-icon">&lt;/&gt;</div>
+            <span class="logo-white">Web</span><span class="logo-purple">Nexa</span>
           </a>
           <p class="footer-desc">Premium web design and digital services. We take your business online.</p>
         </div>
@@ -577,9 +579,18 @@
         </div>
         <div class="footer-contact">
           <h4>Contact</h4>
-          <p><i class="fas fa-phone"></i> +92 300 893 2525</p>
-          <p><i class="fas fa-envelope"></i> hello@webnexa.com</p>
-          <p><i class="fas fa-map-marker-alt"></i> Faisalabad, Pakistan</p>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <span>+92 300 893 2525</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>hello@webnexa.com</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Faisalabad, Pakistan</span>
+          </div>
         </div>
       </div>
       <div class="footer-bottom">
