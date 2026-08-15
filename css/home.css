@@ -97,7 +97,7 @@ body {
 .navbar nav {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 28px;
     height: 100%;
 }
 
@@ -132,14 +132,14 @@ body {
 .talk-btn {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     border: none;
-    padding: 13px 22px;
-    border-radius: 15px;
+    padding: 10px 16px;
+    border-radius: 12px;
     color: var(--white);
     background: linear-gradient(135deg, #6441ef, #8148ed);
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 13px;
+    font-weight: 600;
     cursor: pointer;
     text-decoration: none;
     transition: var(--transition);
@@ -152,8 +152,69 @@ body {
 }
 
 .talk-btn span {
-    font-size: 18px;
-    margin-left: 7px;
+    font-size: 16px;
+    margin-left: 5px;
+}
+
+.mobile-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.mobile-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--white);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+.mobile-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 14px;
+    border-radius: 10px;
+    color: var(--white);
+    background: #25D366;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.whatsapp-btn:hover {
+    background: #1ebc57;
+    transform: translateY(-2px);
 }
 
 /* ================= HOME / HERO ================= */
@@ -818,6 +879,42 @@ body {
     color: var(--purple);
 }
 
+.mobile-bottom-bar {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--primary);
+    padding: 8px 16px;
+    gap: 8px;
+    z-index: 999;
+    box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.15);
+}
+
+.mobile-bar-btn {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.mobile-bar-btn.whatsapp {
+    background: #25D366;
+}
+
+.mobile-bar-btn.get-started {
+    background: linear-gradient(135deg, #6441ef, #8148ed);
+}
+
 /* ================= HOVER EFFECTS ================= */
 .navbar nav a:hover {
     color: var(--purple-light);
@@ -838,11 +935,45 @@ body {
     }
 
     .navbar nav {
-        gap: 18px;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        background: var(--primary);
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px 25px;
+        gap: 0;
+        height: auto;
+        display: none;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     }
 
-    .talk-btn {
+    .navbar nav.open {
+        display: flex;
+    }
+
+    .navbar nav a {
+        width: 100%;
+        height: auto;
+        padding: 14px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .navbar nav a:last-of-type {
+        border-bottom: none;
+    }
+
+    .navbar nav a.active::after {
         display: none;
+    }
+
+    .nav-actions {
+        display: none;
+    }
+
+    .mobile-toggle {
+        display: flex;
     }
 
     .home {
@@ -895,10 +1026,6 @@ body {
 }
 
 @media (max-width: 650px) {
-    .navbar nav {
-        display: none;
-    }
-
     .logo {
         font-size: 21px;
     }
@@ -933,6 +1060,14 @@ body {
         flex-direction: column;
         gap: 12px;
         text-align: center;
+    }
+
+    .mobile-bottom-bar {
+        display: flex;
+    }
+
+    body {
+        padding-bottom: 80px;
     }
 }
 
