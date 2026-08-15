@@ -41,439 +41,500 @@
   </header>
   <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
 
-  <main id="main-content">
-    <div class="req-layout">
-      <aside class="progress-sidebar" id="progressSidebar">
-        <nav class="progress-nav">
-          <div class="progress-step" data-step="1" id="sidebarStep1">
-            <div class="step-indicator">
-              <div class="step-circle">
-                <span class="step-number">1</span>
-                <i class="fas fa-check step-check"></i>
-              </div>
-              <div class="step-line"></div>
-            </div>
-            <div class="step-content">
-              <span class="step-title">Start Your Journey</span>
-              <span class="step-desc">Fill your details on homepage</span>
-              <span class="step-urgency">Required</span>
-            </div>
-          </div>
-          <div class="progress-step" data-step="2" id="sidebarStep2">
-            <div class="step-indicator">
-              <div class="step-circle">
-                <span class="step-number">2</span>
-                <i class="fas fa-check step-check"></i>
-              </div>
-              <div class="step-line"></div>
-            </div>
-            <div class="step-content">
-              <span class="step-title">Choose Website Type</span>
-              <span class="step-desc">Select your website category</span>
-              <span class="step-urgency">Important</span>
-            </div>
-          </div>
-          <div class="progress-step" data-step="3" id="sidebarStep3">
-            <div class="step-indicator">
-              <div class="step-circle">
-                <span class="step-number">3</span>
-                <i class="fas fa-check step-check"></i>
-              </div>
-              <div class="step-line"></div>
-            </div>
-            <div class="step-content">
-              <span class="step-title">Select Features</span>
-              <span class="step-desc">Choose what you need</span>
-              <span class="step-urgency">Important</span>
-            </div>
-          </div>
-          <div class="progress-step" data-step="4" id="sidebarStep4">
-            <div class="step-indicator">
-              <div class="step-circle">
-                <span class="step-number">4</span>
-                <i class="fas fa-check step-check"></i>
-              </div>
-            </div>
-            <div class="step-content">
-              <span class="step-title">Submit & Connect</span>
-              <span class="step-desc">Send requirements on WhatsApp</span>
-              <span class="step-urgency">Final Step</span>
-            </div>
-          </div>
-        </nav>
-      </aside>
-
-      <div class="req-content">
-        <section class="req-hero">
+   <main id="main-content">
+     <div class="req-layout">
+       <div class="req-content">
+        <section class="req-hero" id="reqHero">
           <div class="container">
-             <p class="hero-tagline">Your Website Requirements</p>
-             <h1 class="hero-title">Tell Us What You <span class="text-gradient">Need</span>?</h1>
-             <p class="hero-subtitle">Complete all 4 steps to submit your requirements. Our team will contact you within 24 hours.</p>
+             <h1 class="hero-title" id="heroStepTitle">Website Type</h1>
+             <p class="hero-subtitle" id="heroStepDesc">Select your website type from the options below. If you don't know exactly what you need, choose "Not Sure".</p>
           </div>
         </section>
 
-        <div class="homepage-data-banner hidden" id="homepageDataBanner">
+        <div class="progress-bar" id="progressBar" role="tablist" aria-label="Form progress">
+          <div class="progress-step" data-step="1" role="tab" tabindex="0" aria-current="false" aria-label="Step 1: Website Type">
+            <div class="step-circle">
+              <span class="step-number">1</span>
+              <i class="fas fa-check step-check"></i>
+            </div>
+            <span class="step-label">Website Type</span>
+            <div class="step-line"></div>
+          </div>
+          <div class="progress-step" data-step="2" role="tab" tabindex="0" aria-current="false" aria-label="Step 2: Goals">
+            <div class="step-circle">
+              <span class="step-number">2</span>
+              <i class="fas fa-check step-check"></i>
+            </div>
+            <span class="step-label">Goals</span>
+            <div class="step-line"></div>
+          </div>
+          <div class="progress-step" data-step="3" role="tab" tabindex="0" aria-current="false" aria-label="Step 3: Business Info">
+            <div class="step-circle">
+              <span class="step-number">3</span>
+              <i class="fas fa-check step-check"></i>
+            </div>
+            <span class="step-label">Business Info</span>
+            <div class="step-line"></div>
+          </div>
+          <div class="progress-step" data-step="4" role="tab" tabindex="0" aria-current="false" aria-label="Step 4: Pages Needed">
+            <div class="step-circle">
+              <span class="step-number">4</span>
+              <i class="fas fa-check step-check"></i>
+            </div>
+            <span class="step-label">Pages Needed</span>
+            <div class="step-line"></div>
+          </div>
+          <div class="progress-step" data-step="5" role="tab" tabindex="0" aria-current="false" aria-label="Step 5: Design">
+            <div class="step-circle">
+              <span class="step-number">5</span>
+              <i class="fas fa-check step-check"></i>
+            </div>
+            <span class="step-label">Design</span>
+            <div class="step-line"></div>
+          </div>
+          <div class="progress-step" data-step="6" role="tab" tabindex="0" aria-current="false" aria-label="Step 6: Content">
+            <div class="step-circle">
+              <span class="step-number">6</span>
+              <i class="fas fa-check step-check"></i>
+            </div>
+            <span class="step-label">Content</span>
+            <div class="step-line"></div>
+          </div>
+          <div class="progress-step" data-step="7" role="tab" tabindex="0" aria-current="false" aria-label="Step 7: Budget and Contact">
+            <div class="step-circle">
+              <span class="step-number">7</span>
+              <i class="fas fa-check step-check"></i>
+            </div>
+            <span class="step-label">Budget & Contact</span>
+          </div>
+        </div>
+
+        <div class="step-viewport" id="stepViewport">
+
+        <section class="step-panel" data-step="1" id="step1" role="tabpanel" aria-labelledby="progressBar">
           <div class="container">
-            <div class="banner-content">
-              <i class="fas fa-check-circle"></i>
-              <div class="banner-text">
-                 <strong>Step 1 Complete!</strong>
-                <span id="bannerDetails"></span>
+              <div class="types-grid" id="typesGrid">
+              <div class="type-card" data-type="business">
+                <div class="type-icon"><i class="fas fa-building"></i></div>
+                <h3 class="type-title">Business Website</h3>
+                <p class="type-desc">Professional website for your company or business</p>
+                <span class="type-example">Example: Restaurant, Clinic, Office</span>
+              </div>
+              <div class="type-card" data-type="ecommerce">
+                <div class="type-icon"><i class="fas fa-shopping-cart"></i></div>
+                <h3 class="type-title">E-Commerce</h3>
+                <p class="type-desc">Website for selling products online</p>
+                <span class="type-example">Example: Online store, Shop</span>
+              </div>
+              <div class="type-card" data-type="healthcare">
+                <div class="type-icon"><i class="fas fa-heartbeat"></i></div>
+                <h3 class="type-title">Doctor / Clinic</h3>
+                <p class="type-desc">For doctors, appointments, and services</p>
+                <span class="type-example">Example: Hospital, Clinic website</span>
+              </div>
+              <div class="type-card" data-type="restaurant">
+                <div class="type-icon"><i class="fas fa-utensils"></i></div>
+                <h3 class="type-title">Restaurant</h3>
+                <p class="type-desc">For menu, orders, and reservations</p>
+                <span class="type-example">Example: Foodpanda, Restaurant website</span>
+              </div>
+              <div class="type-card" data-type="realestate">
+                <div class="type-icon"><i class="fas fa-home"></i></div>
+                <h3 class="type-title">Real Estate</h3>
+                <p class="type-desc">For property listings and inquiries</p>
+                <span class="type-example">Example: Real estate agent website</span>
+              </div>
+              <div class="type-card" data-type="portfolio">
+                <div class="type-icon"><i class="fas fa-briefcase"></i></div>
+                <h3 class="type-title">Portfolio</h3>
+                <p class="type-desc">To showcase your projects and skills</p>
+                <span class="type-example">Example: Designer, Developer portfolio</span>
+              </div>
+              <div class="type-card" data-type="school">
+                <div class="type-icon"><i class="fas fa-school"></i></div>
+                <h3 class="type-title">School / Academy</h3>
+                <p class="type-desc">For admissions, results, and notices</p>
+                <span class="type-example">Example: College website, School portal</span>
+              </div>
+              <div class="type-card" data-type="landing">
+                <div class="type-icon"><i class="fas fa-rocket"></i></div>
+                <h3 class="type-title">Landing Page</h3>
+                <p class="type-desc">A single page for product or service</p>
+                <span class="type-example">Example: Product launch, Campaign page</span>
+              </div>
+              <div class="type-card" data-type="not-sure">
+                <div class="type-icon"><i class="fas fa-question-circle"></i></div>
+                <h3 class="type-title">Not Sure</h3>
+                <p class="type-desc">Let us suggest the best option for you</p>
+                <span class="type-example">Example: Tell us your needs</span>
               </div>
             </div>
+            <div class="form-actions" style="justify-content: flex-end;">
+              <button type="button" class="btn btn-primary" id="step1Next">
+                <span>Next</span> <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
           </div>
-        </div>
+        </section>
 
-        <section class="req-section" id="step1">
+        <section class="step-panel hidden" data-step="2" id="step2" role="tabpanel" aria-labelledby="progressBar">
           <div class="container">
-            <div class="section-header">
-              <p class="section-tag">Step 2</p>
-              <h2 class="section-title">Website Type <span class="text-gradient">Choose</span></h2>
-              <p class="section-desc">Select your website type from the options below. If you don't find the exact type, choose "Other".</p>
-            </div>
-            <div class="types-grid" id="typesGrid">
-          <div class="type-card" data-type="business">
-            <div class="type-icon"><i class="fas fa-building"></i></div>
-            <h3 class="type-title">Business / Company</h3>
-            <p class="type-desc">Professional website for your company or business</p>
-            <span class="type-example">Example: Restaurant, Clinic, Office</span>
-          </div>
-          <div class="type-card" data-type="ecommerce">
-            <div class="type-icon"><i class="fas fa-shopping-cart"></i></div>
-            <h3 class="type-title">E-Commerce Store</h3>
-            <p class="type-desc">Website for selling products online</p>
-            <span class="type-example">Example: Amazon, Daraz-like store</span>
-          </div>
-          <div class="type-card" data-type="blog">
-            <div class="type-icon"><i class="fas fa-pen-nib"></i></div>
-            <h3 class="type-title">Blog</h3>
-            <p class="type-desc">For writing and sharing articles</p>
-            <span class="type-example">Example: News blog, Personal blog</span>
-          </div>
-          <div class="type-card" data-type="news">
-            <div class="type-icon"><i class="fas fa-newspaper"></i></div>
-            <h3 class="type-title">News / Magazine</h3>
-            <p class="type-desc">For publishing news and articles</p>
-            <span class="type-example">Example: Daily newspaper, Magazine</span>
-          </div>
-          <div class="type-card" data-type="portfolio">
-            <div class="type-icon"><i class="fas fa-briefcase"></i></div>
-            <h3 class="type-title">Portfolio</h3>
-            <p class="type-desc">To showcase your projects and skills</p>
-            <span class="type-example">Example: Designer, Developer portfolio</span>
-          </div>
-          <div class="type-card" data-type="education">
-            <div class="type-icon"><i class="fas fa-graduation-cap"></i></div>
-            <h3 class="type-title">Education / E-Learning</h3>
-            <p class="type-desc">For online courses and lessons</p>
-            <span class="type-example">Example: Online classes, Course platform</span>
-          </div>
-          <div class="type-card" data-type="school">
-            <div class="type-icon"><i class="fas fa-school"></i></div>
-            <h3 class="type-title">School / University</h3>
-            <p class="type-desc">For admissions, results, and notices</p>
-            <span class="type-example">Example: College website, School portal</span>
-          </div>
-          <div class="type-card" data-type="government">
-            <div class="type-icon"><i class="fas fa-landmark"></i></div>
-            <h3 class="type-title">Government</h3>
-            <p class="type-desc">For departments and public services</p>
-            <span class="type-example">Example: Government forms, Citizen portal</span>
-          </div>
-          <div class="type-card" data-type="social">
-            <div class="type-icon"><i class="fas fa-users"></i></div>
-            <h3 class="type-title">Social Media</h3>
-            <p class="type-desc">For user profiles and interaction</p>
-            <span class="type-example">Example: Facebook, Instagram-like</span>
-          </div>
-          <div class="type-card" data-type="forum">
-            <div class="type-icon"><i class="fas fa-comments"></i></div>
-            <h3 class="type-title">Forum / Community</h3>
-            <p class="type-desc">For discussions and community</p>
-            <span class="type-example">Example: Reddit, Quora-like</span>
-          </div>
-          <div class="type-card" data-type="marketplace">
-            <div class="type-icon"><i class="fas fa-store"></i></div>
-            <h3 class="type-title">Marketplace</h3>
-            <p class="type-desc">Platform for multiple sellers</p>
-            <span class="type-example">Example: OLX, Fiverr-like</span>
-          </div>
-          <div class="type-card" data-type="job">
-            <div class="type-icon"><i class="fas fa-briefcase"></i></div>
-            <h3 class="type-title">Job Portal</h3>
-            <p class="type-desc">For finding and applying to jobs</p>
-            <span class="type-example">Example: Indeed, Rozee.pk-like</span>
-          </div>
-          <div class="type-card" data-type="realestate">
-            <div class="type-icon"><i class="fas fa-home"></i></div>
-            <h3 class="type-title">Real Estate</h3>
-            <p class="type-desc">For property listings and inquiries</p>
-            <span class="type-example">Example: Real estate agent website</span>
-          </div>
-          <div class="type-card" data-type="restaurant">
-            <div class="type-icon"><i class="fas fa-utensils"></i></div>
-            <h3 class="type-title">Restaurant / Food</h3>
-            <p class="type-desc">For menu, orders, and reservations</p>
-            <span class="type-example">Example: Foodpanda, Restaurant website</span>
-          </div>
-          <div class="type-card" data-type="travel">
-            <div class="type-icon"><i class="fas fa-plane"></i></div>
-            <h3 class="type-title">Travel / Booking</h3>
-            <p class="type-desc">For hotels, flights, and trips</p>
-            <span class="type-example">Example: Booking.com, Travel agency</span>
-          </div>
-          <div class="type-card" data-type="healthcare">
-            <div class="type-icon"><i class="fas fa-heartbeat"></i></div>
-            <h3 class="type-title">Healthcare</h3>
-            <p class="type-desc">For doctors, appointments, and services</p>
-            <span class="type-example">Example: Hospital, Clinic website</span>
-          </div>
-          <div class="type-card" data-type="finance">
-            <div class="type-icon"><i class="fas fa-university"></i></div>
-            <h3 class="type-title">Finance / Banking</h3>
-            <p class="type-desc">For accounts and transactions</p>
-            <span class="type-example">Example: Bank, Payment gateway</span>
-          </div>
-          <div class="type-card" data-type="saas">
-            <div class="type-icon"><i class="fas fa-cloud"></i></div>
-            <h3 class="type-title">SaaS / Web App</h3>
-            <p class="type-desc">Application for software services</p>
-            <span class="type-example">Example: Tool, Dashboard, SaaS product</span>
-          </div>
-          <div class="type-card" data-type="membership">
-            <div class="type-icon"><i class="fas fa-id-card"></i></div>
-            <h3 class="type-title">Membership Website</h3>
-            <p class="type-desc">Exclusive content for members</p>
-            <span class="type-example">Example: Course library, Premium content</span>
-          </div>
-          <div class="type-card" data-type="directory">
-            <div class="type-icon"><i class="fas fa-list"></i></div>
-            <h3 class="type-title">Directory / Listing</h3>
-            <p class="type-desc">For listing businesses and services</p>
-            <span class="type-example">Example: Business directory, Yellow pages</span>
-          </div>
-          <div class="type-card" data-type="nonprofit">
-            <div class="type-icon"><i class="fas fa-hand-holding-heart"></i></div>
-            <h3 class="type-title">Nonprofit / Charity</h3>
-            <p class="type-desc">For donations and campaigns</p>
-            <span class="type-example">Example: NGO, Charity organization</span>
-          </div>
-          <div class="type-card" data-type="entertainment">
-            <div class="type-icon"><i class="fas fa-film"></i></div>
-            <h3 class="type-title">Entertainment</h3>
-            <p class="type-desc">For videos, music, and content</p>
-            <span class="type-example">Example: YouTube-like, Music streaming</span>
-          </div>
-          <div class="type-card" data-type="personal">
-            <div class="type-icon"><i class="fas fa-user"></i></div>
-            <h3 class="type-title">Personal Website</h3>
-            <p class="type-desc">For personal branding</p>
-            <span class="type-example">Example: Resume, Personal blog</span>
-          </div>
-          <div class="type-card" data-type="landing">
-            <div class="type-icon"><i class="fas fa-rocket"></i></div>
-            <h3 class="type-title">Landing Page</h3>
-            <p class="type-desc">A single page for product or service</p>
-            <span class="type-example">Example: Product launch, Campaign page</span>
-          </div>
-          <div class="type-card" data-type="wiki">
-            <div class="type-icon"><i class="fas fa-book"></i></div>
-            <h3 class="type-title">Wiki / Knowledge Base</h3>
-            <p class="type-desc">For articles and information</p>
-            <span class="type-example">Example: Wikipedia-like, Help center</span>
-          </div>
-          <div class="type-card" data-type="webportal">
-            <div class="type-icon"><i class="fas fa-th-large"></i></div>
-            <h3 class="type-title">Web Portal</h3>
-            <p class="type-desc">A platform with multiple services</p>
-            <span class="type-example">Example: Student portal, Employee portal</span>
-          </div>
-          <div class="type-card" data-type="other">
-            <div class="type-icon"><i class="fas fa-ellipsis-h"></i></div>
-            <h3 class="type-title">Other / Custom</h3>
-            <p class="type-desc">If you have any other special requirement</p>
-            <span class="type-example">Tell us your exact requirement below</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="req-section req-form-section hidden" id="step2">
-      <div class="container">
-        <div class="section-header">
-          <p class="section-tag">Step 3</p>
-          <h2 class="section-title">Requirements <span class="text-gradient">Select</span></h2>
-          <p class="section-desc">Below are common features for your selected website type. Tick the features you need. You can also add your custom requirements later.</p>
-        </div>
-
-        <div class="homepage-summary hidden" id="homepageSummary">
-          <div class="homepage-summary-header">
-            <i class="fas fa-check-circle"></i>
-              <h3>Data from Homepage</h3>
-          </div>
-          <div class="homepage-summary-grid">
-            <div class="summary-item">
-              <span class="summary-label">Name:</span>
-              <span class="summary-value" id="summaryName"></span>
-            </div>
-            <div class="summary-item">
-              <span class="summary-label">Email:</span>
-              <span class="summary-value" id="summaryEmail"></span>
-            </div>
-            <div class="summary-item">
-              <span class="summary-label">Phone:</span>
-              <span class="summary-value" id="summaryPhone"></span>
-            </div>
-            <div class="summary-item">
-              <span class="summary-label">Company Size:</span>
-              <span class="summary-value" id="summaryCompanySize"></span>
-            </div>
-          </div>
-        </div>
-
-        <form id="requirementsForm">
-        <div class="req-form-wrapper">
-          <div class="selected-type-badge" id="selectedTypeBadge">
-            <i class="fas fa-check-circle"></i>
-            <span id="selectedTypeName">Business / Company Website</span>
-             <button type="button" class="badge-change" id="changeTypeBtn" title="Change website type">
-              <i class="fas fa-pen"></i> Change
-            </button>
-          </div>
-
-          <div class="personal-info-section hidden" id="personalInfoSection">
-            <div class="form-row">
-              <div class="form-group">
-                 <label for="reqName">Your Name <span class="required">*</span></label>
-                 <input type="text" id="reqName" placeholder="Example: Ahmed Ali" required>
-                 <span class="field-example">Example: Your full name</span>
+              <div class="checkbox-grid" id="goalsGrid">
+              <div class="checkbox-item" data-value="whatsapp-contact">
+                <div class="checkbox-box"><i class="fas fa-check"></i></div>
+                <div class="checkbox-content">
+                  <div class="checkbox-label">Customers se WhatsApp par contact</div>
+                </div>
               </div>
-              <div class="form-group">
-                <label for="reqEmail">Email Address <span class="required">*</span></label>
-                <input type="email" id="reqEmail" placeholder="ahmed@company.com" required>
-                <span class="field-example">Example: ahmed@gmail.com</span>
+              <div class="checkbox-item" data-value="online-orders">
+                <div class="checkbox-box"><i class="fas fa-check"></i></div>
+                <div class="checkbox-content">
+                  <div class="checkbox-label">Online orders</div>
+                </div>
+              </div>
+              <div class="checkbox-item" data-value="online-payment">
+                <div class="checkbox-box"><i class="fas fa-check"></i></div>
+                <div class="checkbox-content">
+                  <div class="checkbox-label">Online payment</div>
+                </div>
+              </div>
+              <div class="checkbox-item" data-value="appointment-booking">
+                <div class="checkbox-box"><i class="fas fa-check"></i></div>
+                <div class="checkbox-content">
+                  <div class="checkbox-label">Appointment booking</div>
+                </div>
+              </div>
+              <div class="checkbox-item" data-value="showcase">
+                <div class="checkbox-box"><i class="fas fa-check"></i></div>
+                <div class="checkbox-content">
+                  <div class="checkbox-label">Products/services show karna</div>
+                </div>
+              </div>
+              <div class="checkbox-item" data-value="leads">
+                <div class="checkbox-box"><i class="fas fa-check"></i></div>
+                <div class="checkbox-content">
+                  <div class="checkbox-label">Leads collect karna</div>
+                </div>
+              </div>
+              <div class="checkbox-item" data-value="company-info">
+                <div class="checkbox-box"><i class="fas fa-check"></i></div>
+                <div class="checkbox-content">
+                  <div class="checkbox-label">Company ki information dena</div>
+                </div>
+              </div>
+              <div class="checkbox-item" data-value="blog-news">
+                <div class="checkbox-box"><i class="fas fa-check"></i></div>
+                <div class="checkbox-content">
+                  <div class="checkbox-label">Blog / news</div>
+                </div>
+              </div>
+              <div class="checkbox-item" data-value="other">
+                <div class="checkbox-box"><i class="fas fa-check"></i></div>
+                <div class="checkbox-content">
+                  <div class="checkbox-label">Other</div>
+                </div>
               </div>
             </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="reqPhone">Phone Number <span class="required">*</span></label>
-                <input type="tel" id="reqPhone" placeholder="+92 300 1234567" required>
-                <span class="field-example">Example: +92 300 1234567</span>
-              </div>
+            <div class="form-actions">
+              <button type="button" class="btn btn-outline" id="step2Back">
+                <i class="fas fa-arrow-left"></i> <span>Back</span>
+              </button>
+              <button type="button" class="btn btn-primary" id="step2Next">
+                <span>Next</span> <i class="fas fa-arrow-right"></i>
+              </button>
             </div>
           </div>
+        </section>
 
-          <div class="form-row">
-            <div class="form-group">
-              <label for="reqBudget">Budget Range</label>
-                 <select id="reqBudget">
-                   <option value="">Select budget</option>
-                   <option value="under-50k">Under Rs 50,000</option>
-                   <option value="50k-1lac">Rs 50,000 - 1,00,000</option>
-                   <option value="1lac-3lac">Rs 1,00,000 - 3,00,000</option>
-                   <option value="3lac-5lac">Rs 3,00,000 - 5,00,000</option>
-                   <option value="above-5lac">Above Rs 5,00,000</option>
-                   <option value="not-sure">Not sure yet</option>
-                 </select>
-                 <span class="field-example">Estimate your budget</span>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="reqService">Service Needed <span class="required">*</span></label>
-              <select id="reqService" required>
-                <option value="" disabled selected>Select a service</option>
-                <option value="design">Web Design</option>
-                <option value="development">Web Development</option>
-                <option value="seo">SEO Optimization</option>
-                <option value="ecommerce">E-Commerce</option>
-                <option value="marketing">Digital Marketing</option>
-                <option value="app">App Development</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="reqTimeline">Project Timeline</label>
-              <select id="reqTimeline">
-                <option value="" disabled selected>Select timeline</option>
-                <option value="1-week">1 Week</option>
-                <option value="2-4-weeks">2 - 4 Weeks</option>
-                <option value="1-2-months">1 - 2 Months</option>
-                <option value="3-6-months">3 - 6 Months</option>
-                <option value="6-months-plus">6 Months+</option>
-                <option value="flexible">Flexible / No rush</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="reqDetails">Project Details</label>
-            <textarea id="reqDetails" rows="3" placeholder="Tell us about your project..."></textarea>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-               <label for="reqReference">Reference Website</label>
-               <input type="url" id="reqReference" placeholder="https://example.com">
-               <span class="field-example">If you like any design, share the link</span>
-            </div>
-          </div>
-
-          <div class="features-section">
-            <div class="features-header">
-              <div>
-                 <h3 class="features-heading">
-                   <i class="fas fa-check-square"></i>
-                   Features You Need
-                 </h3>
-                 <p class="features-subtext">Tick the features you need. Select the most important features.</p>
-              </div>
-              <div class="features-actions">
-                <button type="button" class="btn btn-sm btn-outline" id="selectAllFeatures">
-                  <i class="fas fa-check-double"></i> Select All
-                </button>
-                <button type="button" class="btn btn-sm btn-outline" id="clearAllFeatures">
-                  <i class="fas fa-times"></i> Clear
-                </button>
-              </div>
-            </div>
-            <div class="features-grid" id="featuresGrid">
-            </div>
-            <div class="features-summary" id="featuresSummary">
-               <i class="fas fa-info-circle"></i>
-               <span id="featuresSummaryText">No features selected yet</span>
-            </div>
-          </div>
-
-          <div class="manual-section">
-             <h3 class="manual-heading">
-               <i class="fas fa-plus-circle"></i>
-               Add More Requirements?
-             </h3>
-             <p class="manual-subtext">If you don't find your requirement in the list above, write it here. Write each requirement on a new line.</p>
-             <div class="form-group">
-               <label for="manualRequirements">Your Custom Requirements</label>
-               <textarea id="manualRequirements" placeholder="Example: Special payment gateway, Multi-language support, Live chat, etc." rows="4"></textarea>
-               <span class="field-example">Write each requirement on a new line</span>
+        <section class="step-panel hidden" data-step="3" id="step3" role="tabpanel" aria-labelledby="progressBar">
+          <div class="container">
+              <div class="req-form-wrapper">
+               <div class="form-row">
+                 <div class="form-group">
+                   <label for="businessName">Business / Brand Name <span class="required">*</span></label>
+                   <input type="text" id="businessName" placeholder="Example: Ahmed Enterprises" required>
+                 </div>
+                 <div class="form-group">
+                   <label for="businessCategory">Business Category</label>
+                   <input type="text" id="businessCategory" placeholder="Example: Retail, Healthcare, Education">
+                 </div>
+               </div>
+               <div class="form-group">
+                 <label for="businessDescription">Short Description</label>
+                 <textarea id="businessDescription" rows="3" placeholder="Briefly describe what your business does..."></textarea>
+               </div>
+               <div class="form-row">
+                 <div class="form-group">
+                   <label for="cityCountry">City / Country</label>
+                   <input type="text" id="cityCountry" placeholder="Example: Faisalabad, Pakistan">
+                 </div>
+               </div>
+             </div>
+             <div class="form-actions">
+               <button type="button" class="btn btn-outline" id="step3Back">
+                 <i class="fas fa-arrow-left"></i> <span>Back</span>
+               </button>
+               <button type="button" class="btn btn-primary" id="step3Next">
+                 <span>Next</span> <i class="fas fa-arrow-right"></i>
+               </button>
              </div>
           </div>
+        </section>
 
-          <div class="form-actions">
-             <button type="button" class="btn btn-outline" id="backToTypes">
-               <i class="fas fa-arrow-left"></i> Change Type
-             </button>
-            <button type="button" class="btn btn-primary" id="previewBtn">
-              <i class="fas fa-eye"></i> Preview
-            </button>
-             <button type="submit" class="btn btn-primary" id="submitRequirements">
-               <i class="fab fa-whatsapp"></i> Send on WhatsApp
-             </button>
+        <section class="step-panel hidden" data-step="4" id="step4" role="tabpanel" aria-labelledby="progressBar">
+          <div class="container">
+              <div class="checkbox-grid" id="pagesGrid">
+              <div class="checkbox-item" data-value="home"><div class="checkbox-box"><i class="fas fa-check"></i></div><div class="checkbox-content"><div class="checkbox-label">Home</div></div></div>
+              <div class="checkbox-item" data-value="about"><div class="checkbox-box"><i class="fas fa-check"></i></div><div class="checkbox-content"><div class="checkbox-label">About Us</div></div></div>
+              <div class="checkbox-item" data-value="services"><div class="checkbox-box"><i class="fas fa-check"></i></div><div class="checkbox-content"><div class="checkbox-label">Services</div></div></div>
+              <div class="checkbox-item" data-value="products"><div class="checkbox-box"><i class="fas fa-check"></i></div><div class="checkbox-content"><div class="checkbox-label">Products</div></div></div>
+              <div class="checkbox-item" data-value="pricing"><div class="checkbox-box"><i class="fas fa-check"></i></div><div class="checkbox-content"><div class="checkbox-label">Pricing</div></div></div>
+              <div class="checkbox-item" data-value="contact"><div class="checkbox-box"><i class="fas fa-check"></i></div><div class="checkbox-content"><div class="checkbox-label">Contact</div></div></div>
+              <div class="checkbox-item" data-value="gallery"><div class="checkbox-box"><i class="fas fa-check"></i></div><div class="checkbox-content"><div class="checkbox-label">Gallery</div></div></div>
+              <div class="checkbox-item" data-value="testimonials"><div class="checkbox-box"><i class="fas fa-check"></i></div><div class="checkbox-content"><div class="checkbox-label">Testimonials</div></div></div>
+              <div class="checkbox-item" data-value="faq"><div class="checkbox-box"><i class="fas fa-check"></i></div><div class="checkbox-content"><div class="checkbox-label">FAQ</div></div></div>
+              <div class="checkbox-item" data-value="blog"><div class="checkbox-box"><i class="fas fa-check"></i></div><div class="checkbox-content"><div class="checkbox-label">Blog</div></div></div>
+              <div class="checkbox-item" data-value="other"><div class="checkbox-box"><i class="fas fa-check"></i></div><div class="checkbox-content"><div class="checkbox-label">Other</div></div></div>
+            </div>
+             <div class="form-group" style="margin-top: 20px;">
+               <label for="specialFeatures">Special Features</label>
+               <input type="text" id="specialFeatures" placeholder="Aapko koi special feature chahiye?">
+             </div>
+             <div class="form-actions">
+               <button type="button" class="btn btn-outline" id="step4Back">
+                 <i class="fas fa-arrow-left"></i> <span>Back</span>
+               </button>
+               <button type="button" class="btn btn-primary" id="step4Next">
+                 <span>Next</span> <i class="fas fa-arrow-right"></i>
+               </button>
+             </div>
           </div>
+        </section>
+
+        <section class="step-panel hidden" data-step="5" id="step5" role="tabpanel" aria-labelledby="progressBar">
+          <div class="container">
+              <div class="radio-grid" id="designGrid">
+              <div class="radio-card" data-value="modern">
+                <div class="radio-circle"><i class="fas fa-check"></i></div>
+                <div class="radio-label">Modern</div>
+              </div>
+              <div class="radio-card" data-value="simple">
+                <div class="radio-circle"><i class="fas fa-check"></i></div>
+                <div class="radio-label">Simple</div>
+              </div>
+              <div class="radio-card" data-value="professional">
+                <div class="radio-circle"><i class="fas fa-check"></i></div>
+                <div class="radio-label">Professional</div>
+              </div>
+              <div class="radio-card" data-value="luxury">
+                <div class="radio-circle"><i class="fas fa-check"></i></div>
+                <div class="radio-label">Luxury</div>
+              </div>
+              <div class="radio-card" data-value="colorful">
+                <div class="radio-circle"><i class="fas fa-check"></i></div>
+                <div class="radio-label">Colorful</div>
+              </div>
+              <div class="radio-card" data-value="not-sure">
+                <div class="radio-circle"><i class="fas fa-check"></i></div>
+                <div class="radio-label">I don't know — You decide</div>
+              </div>
+            </div>
+             <div class="form-row" style="margin-top: 24px;">
+               <div class="form-group">
+                 <label for="primaryColor">Primary Color</label>
+                 <div class="color-picker-wrapper">
+                   <input type="color" id="primaryColor" value="#6366f1">
+                   <span class="color-preview" id="colorPreview" style="background: #6366f1;"></span>
+                 </div>
+               </div>
+               <div class="form-group">
+                 <label for="referenceWebsite">Reference Website (optional)</label>
+                 <input type="url" id="referenceWebsite" placeholder="https://example.com">
+               </div>
+             </div>
+             <div class="form-actions">
+               <button type="button" class="btn btn-outline" id="step5Back">
+                 <i class="fas fa-arrow-left"></i> <span>Back</span>
+               </button>
+               <button type="button" class="btn btn-primary" id="step5Next">
+                 <span>Next</span> <i class="fas fa-arrow-right"></i>
+               </button>
+             </div>
+          </div>
+        </section>
+
+        <section class="step-panel hidden" data-step="6" id="step6" role="tabpanel" aria-labelledby="progressBar">
+          <div class="container">
+              <div class="req-form-wrapper">
+               <div class="form-row">
+                 <div class="form-group">
+                   <label>Logo Upload</label>
+                   <div class="file-upload-wrapper">
+                     <input type="file" id="logoUpload" accept="image/*">
+                     <label for="logoUpload" class="file-upload-label">
+                       <i class="fas fa-cloud-upload-alt"></i> Choose Logo File
+                     </label>
+                     <span class="file-name" id="logoFileName">No file chosen</span>
+                   </div>
+                 </div>
+                 <div class="form-group">
+                   <label>Images Upload</label>
+                   <div class="file-upload-wrapper">
+                     <input type="file" id="imagesUpload" accept="image/*" multiple>
+                     <label for="imagesUpload" class="file-upload-label">
+                       <i class="fas fa-images"></i> Choose Images
+                     </label>
+                     <span class="file-name" id="imagesFileName">No files chosen</span>
+                   </div>
+                 </div>
+               </div>
+               <div class="form-group">
+                 <label>Existing Content Upload (optional)</label>
+                 <div class="file-upload-wrapper">
+                   <input type="file" id="existingContentUpload">
+                   <label for="existingContentUpload" class="file-upload-label">
+                     <i class="fas fa-file-alt"></i> Choose File
+                   </label>
+                   <span class="file-name" id="existingContentFileName">No file chosen</span>
+                 </div>
+               </div>
+               <div class="form-group">
+                 <label for="contentReference">Reference Website Link (optional)</label>
+                 <input type="url" id="contentReference" placeholder="https://example.com">
+               </div>
+               <div class="form-group">
+                 <label>Content Help</label>
+                 <div class="radio-row" id="contentHelpRadio">
+                   <div class="radio-item" data-value="yes">
+                     <div class="radio-circle"><i class="fas fa-check"></i></div>
+                     <span>Yes, prepare basic content</span>
+                   </div>
+                   <div class="radio-item" data-value="no">
+                     <div class="radio-circle"><i class="fas fa-check"></i></div>
+                     <span>No, I will provide content</span>
+                   </div>
+                   <div class="radio-item" data-value="not-sure">
+                     <div class="radio-circle"><i class="fas fa-check"></i></div>
+                     <span>Not sure</span>
+                   </div>
+                 </div>
+               </div>
+             </div>
+             <div class="form-actions">
+               <button type="button" class="btn btn-outline" id="step6Back">
+                 <i class="fas fa-arrow-left"></i> <span>Back</span>
+               </button>
+               <button type="button" class="btn btn-primary" id="step6Next">
+                 <span>Next</span> <i class="fas fa-arrow-right"></i>
+               </button>
+             </div>
+          </div>
+        </section>
+
+        <section class="step-panel hidden" data-step="7" id="step7" role="tabpanel" aria-labelledby="progressBar">
+          <div class="container">
+              <div class="req-form-wrapper">
+               <div class="form-group">
+                 <label>Budget Range</label>
+                 <div class="radio-row" id="budgetRadio">
+                   <div class="radio-item" data-value="under-50">
+                     <div class="radio-circle"><i class="fas fa-check"></i></div>
+                     <span>Under $50</span>
+                   </div>
+                   <div class="radio-item" data-value="50-100">
+                     <div class="radio-circle"><i class="fas fa-check"></i></div>
+                     <span>$50 – $100</span>
+                   </div>
+                   <div class="radio-item" data-value="100-200">
+                     <div class="radio-circle"><i class="fas fa-check"></i></div>
+                     <span>$100 – $200</span>
+                   </div>
+                   <div class="radio-item" data-value="200-500">
+                     <div class="radio-circle"><i class="fas fa-check"></i></div>
+                     <span>$200 – $500</span>
+                   </div>
+                   <div class="radio-item" data-value="500-plus">
+                     <div class="radio-circle"><i class="fas fa-check"></i></div>
+                     <span>$500+</span>
+                   </div>
+                   <div class="radio-item" data-value="not-sure">
+                     <div class="radio-circle"><i class="fas fa-check"></i></div>
+                     <span>Not sure</span>
+                   </div>
+                 </div>
+               </div>
+               <div class="form-group">
+                 <label>Timeline</label>
+                 <div class="radio-row" id="timelineRadio">
+                   <div class="radio-item" data-value="1-3-days">
+                     <div class="radio-circle"><i class="fas fa-check"></i></div>
+                     <span>1 – 3 days</span>
+                   </div>
+                   <div class="radio-item" data-value="3-7-days">
+                     <div class="radio-circle"><i class="fas fa-check"></i></div>
+                     <span>3 – 7 days</span>
+                   </div>
+                   <div class="radio-item" data-value="1-2-weeks">
+                     <div class="radio-circle"><i class="fas fa-check"></i></div>
+                     <span>1 – 2 weeks</span>
+                   </div>
+                   <div class="radio-item" data-value="flexible">
+                     <div class="radio-circle"><i class="fas fa-check"></i></div>
+                     <span>Flexible</span>
+                   </div>
+                 </div>
+               </div>
+               <div class="form-row">
+                 <div class="form-group">
+                   <label for="contactName">Name <span class="required">*</span></label>
+                   <input type="text" id="contactName" placeholder="Your full name" required>
+                 </div>
+                 <div class="form-group">
+                   <label for="contactWhatsApp">WhatsApp Number <span class="required">*</span></label>
+                   <input type="tel" id="contactWhatsApp" placeholder="+92 300 1234567" required>
+                 </div>
+               </div>
+               <div class="form-row">
+                 <div class="form-group">
+                   <label for="contactEmail">Email <span class="required">*</span></label>
+                   <input type="email" id="contactEmail" placeholder="you@example.com" required>
+                 </div>
+                 <div class="form-group">
+                   <label>Preferred Contact Method</label>
+                   <div class="radio-row" id="contactMethodRadio">
+                     <div class="radio-item" data-value="whatsapp">
+                       <div class="radio-circle"><i class="fas fa-check"></i></div>
+                       <span>WhatsApp</span>
+                     </div>
+                     <div class="radio-item" data-value="email">
+                       <div class="radio-circle"><i class="fas fa-check"></i></div>
+                       <span>Email</span>
+                     </div>
+                     <div class="radio-item" data-value="phone">
+                       <div class="radio-circle"><i class="fas fa-check"></i></div>
+                       <span>Phone</span>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+              <div class="form-actions">
+                <button type="button" class="btn btn-outline" id="step7Back">
+                  <i class="fas fa-arrow-left"></i> <span>Back</span>
+                </button>
+                 <button type="button" class="btn btn-primary" id="previewBtn" style="display:none;">
+                  <i class="fas fa-eye"></i> <span>Preview</span>
+                </button>
+                <button type="button" class="btn btn-primary" id="submitRequirements">
+                  <i class="fab fa-whatsapp"></i> <span>Send on WhatsApp</span>
+                </button>
+              </div>
+          </div>
+        </section>
+
         </div>
-        </form>
       </div>
-    </section>
+    </div>
 
     <!-- Preview Modal -->
     <div class="modal-overlay" id="previewModal">

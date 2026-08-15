@@ -5,464 +5,255 @@
   var BUSINESS_NAME = 'WebNexa';
 
   var websiteTypes = [
-    {
-      id: 'business',
-      name: 'Business / Company Website',
-      icon: 'fa-building',
-      features: [
-        { label: 'Company Information', example: 'Company ka naam, address, contact details' },
-        { label: 'Services / Products Showcase', example: 'Kya services ya products bechte hain' },
-        { label: 'About Us Page', example: 'Hamari kahani aur vision' },
-        { label: 'Contact Form', example: 'Logo se seedha baat karne ke liye form' },
-        { label: 'Testimonials', example: 'Customers ki reviews aur feedback' },
-        { label: 'Team Section', example: 'Hamari team ke members ki details' },
-        { label: 'FAQ Section', example: 'Logo ke sawal aur unka jawab' },
-        { label: 'Map / Location', example: 'Google Map par apna location dikhana' },
-        { label: 'Photo Gallery', example: 'Office ya products ki photos' },
-        { label: 'Blog Section', example: 'Updates aur news share karne ke liye' }
-      ]
-    },
-    {
-      id: 'ecommerce',
-      name: 'E-Commerce Store',
-      icon: 'fa-shopping-cart',
-      features: [
-        { label: 'Product Catalog', example: 'Sare products ka list aur details' },
-        { label: 'Search & Filtering', example: 'Products dhundhne aur filter karne ka tareeqa' },
-        { label: 'Product Detail Pages', example: 'Har product ki alag page with full info' },
-        { label: 'Shopping Cart', example: 'Products cart mein rakhna' },
-        { label: 'Checkout Process', example: 'Kharidari complete karne ka process' },
-        { label: 'Payment Gateway', example: 'JazzCash, EasyPaisa, Card payments' },
-        { label: 'User Accounts', example: 'Customers ke login aur profile' },
-        { label: 'Order Tracking', example: 'Order kahan hai track karne ke liye' },
-        { label: 'Product Reviews', example: 'Customers ki products par reviews' },
-        { label: 'Wishlist', example: 'Pasandeedah products save karna' },
-        { label: 'Inventory Management', example: 'Stocks ka manage' },
-        { label: 'Discount / Coupon System', example: 'Offers aur discounts ke liye' }
-      ]
-    },
-    {
-      id: 'blog',
-      name: 'Blog Website',
-      icon: 'fa-pen-nib',
-      features: [
-        { label: 'Articles / Posts', example: 'Naye articles likhne aur publish karne' },
-        { label: 'Categories', example: 'Topics ke hisaab se articles organize' },
-        { label: 'Tags', example: 'Chhoti chhoti details ke saath tag' },
-        { label: 'Search Bar', example: 'Articles aasani se dhundhne ke liye' },
-        { label: 'Comments System', example: 'Logo ke comments aur feedback' },
-        { label: 'Author Profiles', example: 'Har likhne wale ki alag profile' },
-        { label: 'Related Posts', example: 'Waqe posts ke suggestions' },
-        { label: 'Social Sharing', example: 'Doston ke sath share karne ke buttons' },
-        { label: 'Newsletter Signup', example: 'Email par naye articles receive karna' },
-        { label: 'Reading Time', example: 'Article parhne mein kitna time lagega' }
-      ]
-    },
-    {
-      id: 'news',
-      name: 'News / Magazine',
-      icon: 'fa-newspaper',
-      features: [
-        { label: 'News Categories', example: 'Sports, Politics, Entertainment jaise sections' },
-        { label: 'Articles & Stories', example: 'Daily news articles publish' },
-        { label: 'Search Functionality', example: 'Khabrein dhundhne ke liye search' },
-        { label: 'Breaking News Section', example: 'Important khabrein top par dikhana' },
-        { label: 'Author Profiles', example: 'Reporters aur editors ki details' },
-        { label: 'Trending Stories', example: 'Sab se zyada parhi jane wali khabrein' },
-        { label: 'Advertisement Spaces', example: 'Ads ke liye dedicated jagah' },
-        { label: 'Newsletter Signup', example: 'Email par daily news receive karne' },
-        { label: 'Video News', example: 'Videos ke sath news' },
-        { label: 'Commenting', example: 'Logo ke reactions aur comments' }
-      ]
-    },
-    {
-      id: 'portfolio',
-      name: 'Portfolio Website',
-      icon: 'fa-briefcase',
-      features: [
-        { label: 'Project Gallery', example: 'Apne sare projects ka showcase' },
-        { label: 'Case Studies', example: 'Har project ki detail story' },
-        { label: 'About Me Section', example: 'Apni kahani aur experience' },
-        { label: 'Skills / Services', example: 'Kya skills aur services dete hain' },
-        { label: 'Testimonials', example: 'Clients ki reviews aur feedback' },
-        { label: 'Contact Form', example: 'Naye clients se baat karne ke liye' },
-        { label: 'Resume / CV Download', example: 'CV download karne ka option' },
-        { label: 'Blog / Articles', example: 'Apne khayal likhne ke liye' },
-        { label: 'Video Showcase', example: 'Apne projects ki videos' }
-      ]
-    },
-    {
-      id: 'education',
-      name: 'Education / E-Learning',
-      icon: 'fa-graduation-cap',
-      features: [
-        { label: 'Course Catalog', example: 'Sare available courses ka list' },
-        { label: 'Video Lessons', example: 'Recorded classes aur tutorials' },
-        { label: 'Quizzes & Tests', example: 'Students ke liye tests aur quizzes' },
-        { label: 'Assignments', example: 'Homework aur assignments submit' },
-        { label: 'Student Accounts', example: 'Har student ka alag account' },
-        { label: 'Progress Tracking', example: 'Kitna course complete hua' },
-        { label: 'Certificates', example: 'Course complete karne par certificate' },
-        { label: 'Discussion Forum', example: 'Students aur teachers ki baat' },
-        { label: 'Live Classes', example: 'Real-time online classes' },
-        { label: 'Payment for Courses', example: 'Courses ke liye fee lena' }
-      ]
-    },
-    {
-      id: 'school',
-      name: 'School / University',
-      icon: 'fa-school',
-      features: [
-        { label: 'Admissions Portal', example: 'Naye students ke liye admission form' },
-        { label: 'Programs & Courses', example: 'Kya programs aur degrees offer kiye ja rahe hain' },
-        { label: 'Faculty Information', example: 'Teachers aur staff ki details' },
-        { label: 'Academic Calendar', example: 'Exams, holidays, aur events ka schedule' },
-        { label: 'Notices & Announcements', example: 'Important notices sab ke liye' },
-        { label: 'Results & Grades', example: 'Students ke results online dekhne' },
-        { label: 'Events Section', example: 'Aane wale events ki list' },
-        { label: 'Student Portal', example: 'Students ke liye login area' },
-        { label: 'Online Fee Payment', example: 'Fee online dena' },
-        { label: 'Library System', example: 'Books ka online catalog' }
-      ]
-    },
-    {
-      id: 'government',
-      name: 'Government',
-      icon: 'fa-landmark',
-      features: [
-        { label: 'Departments & Services', example: 'Kya services available hain' },
-        { label: 'Online Forms', example: 'Applications aur forms online bharna' },
-        { label: 'Announcements', example: 'Important aam zubaan mein notices' },
-        { label: 'Regulations & Rules', example: 'Laws aur rules ki details' },
-        { label: 'Online Applications', example: 'Sehat card, passport jaise apply' },
-        { label: 'Citizen Accounts', example: 'Logon ke liye personal accounts' },
-        { label: 'Contact Directory', example: 'Departments ke contact details' },
-        { label: 'Downloads', example: 'Forms aur documents download' },
-        { label: 'Feedback System', example: 'Logo ki raay lena' },
-        { label: 'Multilingual Support', example: 'Kai languages mein' }
-      ]
-    },
-    {
-      id: 'social',
-      name: 'Social Media Platform',
-      icon: 'fa-users',
-      features: [
-        { label: 'User Profiles', example: 'Har user ki alag profile page' },
-        { label: 'Posts & Feeds', example: 'Posts likhne aur dekhne' },
-        { label: 'Likes & Comments', example: 'Posts par like aur comment' },
-        { label: 'Follow / Friends', example: 'Doston ko follow ya add karna' },
-        { label: 'Messaging', example: 'Logon ke beech private messages' },
-        { label: 'Notifications', example: 'Nayi activity ka alert' },
-        { label: 'Media Sharing', example: 'Photos aur videos share karna' },
-        { label: 'Stories / Status', example: '24 ghante ke liye status' },
-        { label: 'Groups / Communities', example: 'Groups banane aur join karna' }
-      ]
-    },
-    {
-      id: 'forum',
-      name: 'Forum / Community',
-      icon: 'fa-comments',
-      features: [
-        { label: 'User Accounts', example: 'Members ke liye signup aur login' },
-        { label: 'Discussion Threads', example: 'Har topic par alag thread' },
-        { label: 'Categories & Sections', example: 'Topics ke hisaab se organize' },
-        { label: 'Replies & Comments', example: 'Threads par jawab dena' },
-        { label: 'Voting / Reactions', example: 'Posts par vote ya emoji' },
-        { label: 'Moderation Tools', example: 'Admin control ke liye tools' },
-        { label: 'Search', example: 'Purane topics dhundhne ke liye' },
-        { label: 'Private Messaging', example: 'Members ki beech messages' },
-        { label: 'User Reputation', example: 'Active members ke liye badges' }
-      ]
-    },
-    {
-      id: 'marketplace',
-      name: 'Marketplace',
-      icon: 'fa-store',
-      features: [
-        { label: 'Seller Accounts', example: 'Sellers ke liye alag accounts' },
-        { label: 'Product / Service Listings', example: 'Har seller ka apna list' },
-        { label: 'Search & Filtering', example: 'Cheezain dhundhne aur filter' },
-        { label: 'Messaging System', example: 'Buyer aur seller ki baat' },
-        { label: 'Reviews & Ratings', example: 'Sellers ke reviews' },
-        { label: 'Payments', example: 'Online paise lena aur dena' },
-        { label: 'Order Management', example: 'Orders track aur manage' },
-        { label: 'Seller Dashboard', example: 'Sellers ke liye apna panel' },
-        { label: 'Dispute Resolution', example: 'Problems ka solution' }
-      ]
-    },
-    {
-      id: 'job',
-      name: 'Job Portal',
-      icon: 'fa-briefcase',
-      features: [
-        { label: 'Job Listings', example: 'Sare available jobs ka list' },
-        { label: 'Search & Filtering', example: 'Jobs title, city, salary se dhundhna' },
-        { label: 'Company Profiles', example: 'Har company ki detail page' },
-        { label: 'Candidate Profiles', example: 'Job seekers ki CV aur profile' },
-        { label: 'CV / Resume Upload', example: 'Apna CV upload karna' },
-        { label: 'Job Applications', example: 'Jobs ke liye apply karna' },
-        { label: 'Job Alerts', example: 'Naye jobs ka notification' },
-        { label: 'Resume Builder', example: 'Online CV banane ka tool' },
-        { label: 'Interview Scheduling', example: 'Interviews ka time fix' }
-      ]
-    },
-    {
-      id: 'realestate',
-      name: 'Real Estate',
-      icon: 'fa-home',
-      features: [
-        { label: 'Property Listings', example: 'Homes, shops, plots ka list' },
-        { label: 'Search & Filtering', example: 'Price, location, size se dhundhna' },
-        { label: 'Photos & Videos', example: 'Property ki photos aur video tour' },
-        { label: 'Map Integration', example: 'Google Map par property location' },
-        { label: 'Property Details', example: 'Full details: size, price, rooms' },
-        { label: 'Agent Profiles', example: 'Real estate agents ki details' },
-        { label: 'Inquiry Form', example: 'Property ke liye inquiry bhejna' },
-        { label: 'Virtual Tour', example: 'Online property dekhna' },
-        { label: 'Mortgage Calculator', example: 'Loan ka hisab' },
-        { label: 'Favorites / Shortlist', example: 'Pasandeedah properties save' }
-      ]
-    },
-    {
-      id: 'restaurant',
-      name: 'Restaurant / Food',
-      icon: 'fa-utensils',
-      features: [
-        { label: 'Menu Display', example: 'Sare dishes aur prices ka menu' },
-        { label: 'Online Ordering', example: 'Ghar baithe order dena' },
-        { label: 'Table Reservation', example: 'Restaurant mein table book karna' },
-        { label: 'Location / Map', example: 'Restaurant kahan hai dikhana' },
-        { label: 'Opening Hours', example: 'Kab khula hai aur kab band' },
-        { label: 'Reviews & Ratings', example: 'Customers ke reviews' },
-        { label: 'Delivery Information', example: 'Delivery area aur charges' },
-        { label: 'Special Offers', example: 'Discounts aur deals' },
-        { label: 'Gallery', example: 'Food ki photos' },
-        { label: 'Online Payment', example: 'Card ya JazzCash se pay' }
-      ]
-    },
-    {
-      id: 'travel',
-      name: 'Travel / Booking',
-      icon: 'fa-plane',
-      features: [
-        { label: 'Destinations Info', example: 'Ghumnaye jagahon ki details' },
-        { label: 'Hotel / Flight Listings', example: 'Hotels aur flights ka list' },
-        { label: 'Search & Filtering', example: 'Budget, date, location se dhundhna' },
-        { label: 'Booking System', example: 'Online booking aur reservation' },
-        { label: 'Payments', example: 'Online paise dena' },
-        { label: 'Reviews', example: 'Travelers ke reviews' },
-        { label: 'Itineraries', example: 'Trip ka plan aur schedule' },
-        { label: 'Travel Packages', example: 'Ready-made trips aur deals' },
-        { label: 'Travel Blog', example: 'Travel experiences share' },
-        { label: 'Weather Info', example: 'Destination ka mausam' }
-      ]
-    },
-    {
-      id: 'healthcare',
-      name: 'Healthcare',
-      icon: 'fa-heartbeat',
-      features: [
-        { label: 'Doctor Profiles', example: 'Doctors ke qualifications aur timings' },
-        { label: 'Departments / Services', example: 'Kya departments aur services hain' },
-        { label: 'Appointment Booking', example: 'Online appointment lena' },
-        { label: 'Patient Portal', example: 'Patients ke liye login area' },
-        { label: 'FAQs', example: 'Common sawal aur jawab' },
-        { label: 'Location / Contact', example: 'Hospital ka address aur contact' },
-        { label: 'Emergency Info', example: 'Emergency contact aur timing' },
-        { label: 'Online Consultation', example: 'Video call par doctor se baat' },
-        { label: 'Prescription Management', example: 'Medicines aur prescriptions' },
-        { label: 'Health Articles', example: 'Health tips aur articles' }
-      ]
-    },
-    {
-      id: 'finance',
-      name: 'Finance / Banking',
-      icon: 'fa-university',
-      features: [
-        { label: 'Account Login', example: 'Users ke liye secure login' },
-        { label: 'Balance & Statements', example: 'Account balance aur history' },
-        { label: 'Transactions', example: 'Paise bhejne aur lene ka record' },
-        { label: 'Transfers', example: 'Ek account se doosre mein transfer' },
-        { label: 'Bill Payments', example: 'Electricity, gas, phone bills' },
-        { label: 'Notifications', example: 'Transaction par alert messages' },
-        { label: 'Security Features', example: 'OTP, 2FA, aur security' },
-        { label: 'Loan Application', example: 'Loan ke liye apply' },
-        { label: 'Investment Dashboard', example: 'Investments track karna' },
-        { label: 'Support Chat', example: 'Customer se baat karna' }
-      ]
-    },
-    {
-      id: 'saas',
-      name: 'SaaS / Web Application',
-      icon: 'fa-cloud',
-      features: [
-        { label: 'Sign-up / Login', example: 'Naye users ke liye account banana' },
-        { label: 'Dashboard', example: 'Users ke liye main dashboard' },
-        { label: 'Subscriptions', example: 'Free aur paid plans' },
-        { label: 'User Settings', example: 'Apni settings change karna' },
-        { label: 'Notifications', example: 'Updates aur alerts' },
-        { label: 'Data Management', example: 'Apna data safely store' },
-        { label: 'Integrations', example: 'Dosri apps ke sath connect' },
-        { label: 'API Access', example: 'Developers ke liye API' },
-        { label: 'Team Collaboration', example: 'Team ke sath kaam karna' },
-        { label: 'Analytics & Reports', example: 'Data aur performance' }
-      ]
-    },
-    {
-      id: 'membership',
-      name: 'Membership Website',
-      icon: 'fa-id-card',
-      features: [
-        { label: 'Registration', example: 'Naye members ke liye signup' },
-        { label: 'Member Profiles', example: 'Har member ki profile page' },
-        { label: 'Login System', example: 'Members ke liye secure login' },
-        { label: 'Restricted Content', example: 'Sirf members ke liye content' },
-        { label: 'Subscriptions', example: 'Monthly ya yearly plans' },
-        { label: 'Payments', example: 'Online membership fee' },
-        { label: 'Member Dashboard', example: 'Apni activity aur content dekhna' },
-        { label: 'Member Directory', example: 'Sare members ki list' },
-        { label: 'Private Community', example: 'Members ki beech group' }
-      ]
-    },
-    {
-      id: 'directory',
-      name: 'Directory / Listing',
-      icon: 'fa-list',
-      features: [
-        { label: 'Business / Person Listings', example: 'Sare businesses ka directory' },
-        { label: 'Categories', example: 'Kya category mein kya aata hai' },
-        { label: 'Search', example: 'Business dhundhne ke liye search' },
-        { label: 'Filters', example: 'Location, rating, price se filter' },
-        { label: 'Maps', example: 'Business location dikhana' },
-        { label: 'Profiles', example: 'Har business ki detail profile' },
-        { label: 'Reviews', example: 'Customers ke reviews' },
-        { label: 'Contact Options', example: 'Direct call ya message bhejna' },
-        { label: 'Claim Listing', example: 'Apna business profile claim karna' },
-        { label: 'Premium Listings', example: 'Paid promotions' }
-      ]
-    },
-    {
-      id: 'nonprofit',
-      name: 'Nonprofit / Charity',
-      icon: 'fa-hand-holding-heart',
-      features: [
-        { label: 'Mission / About', example: 'Organization ki kahani aur goal' },
-        { label: 'Campaigns', example: 'Current campaigns aur causes' },
-        { label: 'Donation System', example: 'Online donation lena' },
-        { label: 'Volunteer Registration', example: 'Volunteers ke liye signup' },
-        { label: 'Events', example: 'Aane wale events aur fundraisers' },
-        { label: 'Impact Stories', example: 'Hamare kaam ke results' },
-        { label: 'Contact', example: 'Logon se baat karne ke liye' },
-        { label: 'Newsletter', example: 'Updates email par lena' },
-        { label: 'Partner Logos', example: 'Supporters ka showcase' },
-        { label: 'Transparency Report', example: 'Paise kahan kharch kiye' }
-      ]
-    },
-    {
-      id: 'entertainment',
-      name: 'Entertainment',
-      icon: 'fa-film',
-      features: [
-        { label: 'Videos / Music Library', example: 'Sare videos aur music ka collection' },
-        { label: 'Categories', example: 'Music, Movies, Shows ke hisaab se' },
-        { label: 'Playlists', example: 'Apne favourite content ka list' },
-        { label: 'Ratings & Reviews', example: 'Content par ratings dena' },
-        { label: 'User Accounts', example: 'Users ke profiles aur history' },
-        { label: 'Recommendations', example: 'Apne pasandeedah content ke suggestions' },
-        { label: 'Search', example: 'Content dhundhne ke liye' },
-        { label: 'Downloads', example: 'Offline dekhne ke liye' },
-        { label: 'Live Streaming', example: 'Live events aur shows' },
-        { label: 'Subtitles', example: 'Multiple languages mein' }
-      ]
-    },
-    {
-      id: 'personal',
-      name: 'Personal Website',
-      icon: 'fa-user',
-      features: [
-        { label: 'Biography', example: 'Apni kahani aur background' },
-        { label: 'Interests & Hobbies', example: 'Kya pasand karte hain' },
-        { label: 'Projects Showcase', example: 'Apne personal projects' },
-        { label: 'Blog', example: 'Apne khayal aur articles' },
-        { label: 'Gallery', example: 'Photos aur memories' },
-        { label: 'Social Links', example: 'Social media ke links' },
-        { label: 'Contact Info', example: 'Logon se baat karne ke liye' },
-        { label: 'Resume', example: 'Apni qualifications aur experience' },
-        { label: 'Services', example: 'Kya services offer karte hain' }
-      ]
-    },
-    {
-      id: 'landing',
-      name: 'Landing Page',
-      icon: 'fa-rocket',
-      features: [
-        { label: 'Hero Section', example: 'Pehli nazar par attract karne wali heading' },
-        { label: 'Value Proposition', example: 'Aapke product ya service ka fayda' },
-        { label: 'CTA Button', example: 'Action lene ke liye button' },
-        { label: 'Features / Benefits', example: 'Kyun choose karein aapko' },
-        { label: 'Testimonials', example: 'Customers ki reviews' },
-        { label: 'Pricing', example: 'Plans aur prices' },
-        { label: 'Contact / Signup Form', example: 'Naye leads ke liye form' },
-        { label: 'Video', example: 'Product explainer video' },
-        { label: 'FAQ Section', example: 'Common sawal aur jawab' },
-        { label: 'Trust Badges', example: 'Clients ya awards ka showcase' }
-      ]
-    },
-    {
-      id: 'wiki',
-      name: 'Wiki / Knowledge Base',
-      icon: 'fa-book',
-      features: [
-        { label: 'Articles', example: 'Detailed information articles' },
-        { label: 'Categories', example: 'Topics ke hisaab se organize' },
-        { label: 'Search', example: 'Articles dhundhne ke liye' },
-        { label: 'Internal Links', example: 'Articles ke beech links' },
-        { label: 'Editing Tools', example: 'Articles ko update karne ke liye' },
-        { label: 'Revision History', example: 'Purani versions dekhna' },
-        { label: 'User Contributions', example: 'Users ke articles add karne' },
-        { label: 'Images & Media', example: 'Articles ke sath photos' },
-        { label: 'Discussion Pages', example: 'Har article par baat' }
-      ]
-    },
-    {
-      id: 'webportal',
-      name: 'Web Portal',
-      icon: 'fa-th-large',
-      features: [
-        { label: 'Login System', example: 'Users ke liye secure login' },
-        { label: 'Personalized Dashboard', example: 'Har user ke liye apna dashboard' },
-        { label: 'Multiple Services', example: 'Ek saath kai services' },
-        { label: 'Notifications', example: 'Updates aur alerts' },
-        { label: 'Documents', example: 'Files aur documents download' },
-        { label: 'Search', example: 'Sari cheezein dhundhna' },
-        { label: 'User Management', example: 'Admin ke liye user control' },
-        { label: 'Reports', example: 'Data aur statistics' },
-        { label: 'Settings', example: 'Apni preferences' },
-        { label: 'Help Center', example: 'Support aur guidance' }
-      ]
-    },
-    {
-      id: 'other',
-      name: 'Other / Custom Website',
-      icon: 'fa-ellipsis-h',
-      features: [
-        { label: 'Custom Design', example: 'Apni pasandeedah design' },
-        { label: 'Custom Features', example: 'Koi bhi special feature' },
-        { label: 'Admin Panel', example: 'Content manage karne ke liye' },
-        { label: 'API Integration', example: 'Dosri apps ke sath connect' },
-        { label: 'Multi-language', example: 'Kai languages mein website' },
-        { label: 'Analytics', example: 'Visitors ke bare mein data' },
-        { label: 'SEO Optimization', example: 'Google par aage lane ke liye' },
-        { label: 'Custom Database', example: 'Apna data structure' },
-        { label: 'Third-party Tools', example: 'Dosri tools integrate' }
-      ]
-    }
+    { id: 'business', name: 'Business Website', icon: 'fa-building' },
+    { id: 'ecommerce', name: 'E-Commerce', icon: 'fa-shopping-cart' },
+    { id: 'healthcare', name: 'Doctor / Clinic', icon: 'fa-heartbeat' },
+    { id: 'restaurant', name: 'Restaurant', icon: 'fa-utensils' },
+    { id: 'realestate', name: 'Real Estate', icon: 'fa-home' },
+    { id: 'portfolio', name: 'Portfolio', icon: 'fa-briefcase' },
+    { id: 'school', name: 'School / Academy', icon: 'fa-school' },
+    { id: 'landing', name: 'Landing Page', icon: 'fa-rocket' },
+    { id: 'not-sure', name: 'Not Sure', icon: 'fa-question-circle' }
   ];
 
-  var selectedType = null;
-  var selectedFeatures = new Set();
+  var formData = {
+    currentStep: 1,
+    completedSteps: [],
+    websiteType: null,
+    goals: [],
+    businessName: '',
+    businessCategory: '',
+    businessDescription: '',
+    cityCountry: '',
+    pagesNeeded: [],
+    specialFeatures: '',
+    designStyle: '',
+    primaryColor: '#6366f1',
+    referenceWebsite: '',
+    logo: null,
+    images: [],
+    existingContent: null,
+    contentReference: '',
+    contentHelp: '',
+    budget: '',
+    timeline: '',
+    contactName: '',
+    contactWhatsApp: '',
+    contactEmail: '',
+    contactMethod: 'whatsapp'
+  };
+
   var homepageData = null;
-  var requirementsState = null;
+  var isTransitioning = false;
+
+  var stepViewport = document.getElementById('stepViewport');
+  var progressBar = document.getElementById('progressBar');
+  var toast = document.getElementById('toast');
+  var previewModal = document.getElementById('previewModal');
+  var previewContent = document.getElementById('previewContent');
+  var previewModalClose = document.getElementById('previewModalClose');
+  var previewCancel = document.getElementById('previewCancel');
+  var previewConfirm = document.getElementById('previewConfirm');
+
+  function showToast(message, type) {
+    toast.textContent = message;
+    toast.className = 'toast ' + type;
+    setTimeout(function () { toast.classList.add('show'); }, 10);
+    setTimeout(function () { toast.classList.remove('show'); }, 4000);
+  }
+
+  function escapeHtml(text) {
+    if (!text) return '';
+    return String(text)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function saveState() {
+    try {
+      localStorage.setItem('webnexa_requirements_state', JSON.stringify(formData));
+    } catch (e) {
+      // ignore
+    }
+  }
+
+  function loadState() {
+    try {
+      var stored = localStorage.getItem('webnexa_requirements_state');
+      if (stored) {
+        var parsed = JSON.parse(stored);
+        if (parsed.type && !parsed.websiteType) {
+          parsed.websiteType = parsed.type;
+          delete parsed.type;
+        }
+        if (parsed.features && !parsed.goals) {
+          parsed.goals = parsed.features;
+          delete parsed.features;
+        }
+        if (parsed.maxStepReached && !parsed.completedSteps) {
+          parsed.completedSteps = [];
+          for (var i = 1; i <= parsed.maxStepReached; i++) {
+            parsed.completedSteps.push(i);
+          }
+          delete parsed.maxStepReached;
+        }
+        Object.keys(formData).forEach(function (key) {
+          if (parsed.hasOwnProperty(key)) {
+            formData[key] = parsed[key];
+          }
+        });
+      }
+    } catch (e) {
+      // ignore
+    }
+  }
+
+  function clearState() {
+    localStorage.removeItem('webnexa_requirements_state');
+  }
+
+  function updateProgressBar() {
+    var steps = progressBar.querySelectorAll('.progress-step');
+    steps.forEach(function (step, index) {
+      var stepNum = index + 1;
+      step.classList.remove('active', 'completed');
+      step.setAttribute('aria-current', 'false');
+      if (stepNum === formData.currentStep) {
+        step.classList.add('active');
+        step.setAttribute('aria-current', 'step');
+      } else if (formData.completedSteps.indexOf(stepNum) !== -1) {
+        step.classList.add('completed');
+      }
+    });
+  }
+
+  function markStepCompleted(step) {
+    if (formData.completedSteps.indexOf(step) === -1) {
+      formData.completedSteps.push(step);
+    }
+  }
+
+  function markStepsCompleted(fromStep, toStep) {
+    for (var i = fromStep; i <= toStep; i++) {
+      markStepCompleted(i);
+    }
+  }
+
+  function isStepCompleted(step) {
+    return formData.completedSteps.indexOf(step) !== -1;
+  }
+
+  function getFurthestCompletedStep(fromStep) {
+    var furthest = fromStep;
+    for (var i = 0; i < formData.completedSteps.length; i++) {
+      var step = formData.completedSteps[i];
+      if (step >= fromStep && step > furthest) {
+        furthest = step;
+      }
+    }
+    return furthest;
+  }
+
+  function updateHero(step) {
+    var heroTitle = document.getElementById('heroStepTitle');
+    var heroDesc = document.getElementById('heroStepDesc');
+    if (!heroTitle || !heroDesc) return;
+
+    var titles = {
+      1: 'Website Type',
+      2: 'Your Goals',
+      3: 'Business Info',
+      4: 'Pages Needed',
+      5: 'Design Style',
+      6: 'Website Content',
+      7: 'Budget & Contact'
+    };
+
+    var descriptions = {
+      1: 'Select your website type from the options below. If you don\'t know exactly what you need, choose "Not Sure".',
+      2: 'What do you want your website to do? Select all that apply.',
+      3: 'Tell us a bit about your business so we can tailor the perfect solution.',
+      4: 'Which pages do you want on your website?',
+      5: 'Choose a design style and color preference for your website.',
+      6: 'Upload any content you already have, or let us know if you need help.',
+      7: 'Almost done! Tell us your budget and how to reach you.'
+    };
+
+    heroTitle.textContent = titles[step] || '';
+    heroDesc.textContent = descriptions[step] || '';
+  }
+
+  function goToStep(n, direction) {
+    if (isTransitioning && direction !== 'none') return;
+    if (n < 1 || n > 7) return;
+
+    var currentPanel = document.querySelector('.step-panel.active');
+    var nextPanel = document.getElementById('step' + n);
+    if (!nextPanel || nextPanel === currentPanel) {
+      if (currentPanel && n === formData.currentStep) return;
+    }
+
+    formData.currentStep = n;
+    saveState();
+    updateProgressBar();
+    updateHero(n);
+
+    if (direction === 'none') {
+      document.querySelectorAll('.step-panel').forEach(function (panel) {
+        if (panel !== nextPanel) {
+          panel.classList.remove('active', 'exit-left', 'exit-right', 'enter-left', 'enter-right');
+          panel.classList.add('hidden');
+        }
+      });
+      nextPanel.classList.remove('hidden', 'exit-left', 'exit-right', 'enter-left', 'enter-right');
+      nextPanel.classList.add('active');
+      stepViewport.scrollTop = 0;
+      return;
+    }
+
+    isTransitioning = true;
+    var exitClass = direction === 'forward' ? 'exit-left' : 'exit-right';
+    var enterClass = direction === 'forward' ? 'enter-right' : 'enter-left';
+
+    if (currentPanel) {
+      currentPanel.classList.add(exitClass);
+    }
+
+    setTimeout(function () {
+      if (currentPanel) {
+        currentPanel.classList.remove('active', 'exit-left', 'exit-right');
+        currentPanel.classList.add('hidden');
+      }
+
+      nextPanel.classList.remove('hidden', 'enter-left', 'enter-right', 'exit-left', 'exit-right');
+      nextPanel.classList.add(enterClass);
+      nextPanel.offsetHeight;
+      nextPanel.classList.remove(enterClass);
+      nextPanel.offsetHeight;
+      nextPanel.classList.add('active');
+
+      stepViewport.scrollTop = 0;
+      isTransitioning = false;
+    }, 400);
+  }
+
+  function validateStep(step) {
+    if (step === 1 && !formData.websiteType) {
+      showToast('Pehle website type select karein.', 'error');
+      return false;
+    }
+    if (step === 3 && !formData.businessName.trim()) {
+      showToast('Pehle business name fill karein.', 'error');
+      return false;
+    }
+    if (step === 7 && (!formData.contactName.trim() || !formData.contactWhatsApp.trim() || !formData.contactEmail.trim())) {
+      showToast('Please fill in all required contact fields.', 'error');
+      return false;
+    }
+    return true;
+  }
 
   function loadHomepageData() {
     try {
@@ -479,212 +270,64 @@
     localStorage.removeItem('webnexa_homepage_inquiry');
   }
 
-  function saveRequirementsState() {
-    var state = {
-      type: selectedType,
-      features: Array.from(selectedFeatures),
-      budget: document.getElementById('reqBudget').value,
-      service: document.getElementById('reqService').value,
-      timeline: document.getElementById('reqTimeline').value,
-      details: document.getElementById('reqDetails').value.trim(),
-      reference: document.getElementById('reqReference').value.trim(),
-      manual: document.getElementById('manualRequirements').value.trim()
-    };
-    localStorage.setItem('webnexa_requirements_state', JSON.stringify(state));
-  }
-
-  function loadRequirementsState() {
-    try {
-      var stored = localStorage.getItem('webnexa_requirements_state');
-      if (stored) {
-        requirementsState = JSON.parse(stored);
-      }
-    } catch (e) {
-      requirementsState = null;
-    }
-  }
-
-  function restoreRequirementsState() {
-    if (!requirementsState) return;
-
-    if (requirementsState.type) {
-      selectedType = requirementsState.type;
-      var cards = typesGrid.querySelectorAll('.type-card');
-      cards.forEach(function (card) {
-        if (card.getAttribute('data-type') === selectedType) {
-          card.classList.add('selected');
-        }
-      });
-      renderFeatures(selectedType);
-      step2.classList.remove('hidden');
-    }
-
-    if (requirementsState.budget) {
-      document.getElementById('reqBudget').value = requirementsState.budget;
-    }
-    if (requirementsState.service) {
-      document.getElementById('reqService').value = requirementsState.service;
-    }
-    if (requirementsState.timeline) {
-      document.getElementById('reqTimeline').value = requirementsState.timeline;
-    }
-    if (requirementsState.details) {
-      document.getElementById('reqDetails').value = requirementsState.details;
-    }
-    if (requirementsState.reference) {
-      document.getElementById('reqReference').value = requirementsState.reference;
-    }
-    if (requirementsState.manual) {
-      document.getElementById('manualRequirements').value = requirementsState.manual;
-    }
-
-    if (requirementsState.features && requirementsState.features.length > 0) {
-      var items = featuresGrid.querySelectorAll('.feature-item');
-      items.forEach(function (item) {
-        var feature = item.getAttribute('data-feature');
-        if (requirementsState.features.indexOf(feature) !== -1) {
-          selectedFeatures.add(feature);
-          item.classList.add('selected');
-        }
-      });
-      updateFeaturesSummary();
-    }
-
-    updateProgressIndicator();
-  }
-
-  function clearRequirementsState() {
-    localStorage.removeItem('webnexa_requirements_state');
-  }
-
-  var typesGrid = document.getElementById('typesGrid');
-  var step2 = document.getElementById('step2');
-  var featuresGrid = document.getElementById('featuresGrid');
-  var selectedTypeName = document.getElementById('selectedTypeName');
-  var requirementsForm = document.getElementById('requirementsForm');
-  var backToTypesBtn = document.getElementById('backToTypes');
-  var previewBtn = document.getElementById('previewBtn');
-  var previewModal = document.getElementById('previewModal');
-  var previewModalClose = document.getElementById('previewModalClose');
-  var previewCancel = document.getElementById('previewCancel');
-  var previewConfirm = document.getElementById('previewConfirm');
-  var previewContent = document.getElementById('previewContent');
-  var changeTypeBtn = document.getElementById('changeTypeBtn');
-  var selectAllFeaturesBtn = document.getElementById('selectAllFeatures');
-  var clearAllFeaturesBtn = document.getElementById('clearAllFeatures');
-  var featuresSummaryText = document.getElementById('featuresSummaryText');
-  var toast = document.getElementById('toast');
-  var sidebarSteps = document.querySelectorAll('.progress-step');
-
-  function showToast(message, type) {
-    toast.textContent = message;
-    toast.className = 'toast ' + type;
-    setTimeout(function () {
-      toast.classList.add('show');
-    }, 10);
-    setTimeout(function () {
-      toast.classList.remove('show');
-    }, 4000);
-  }
-
-  function updateProgressIndicator() {
-    var step1 = document.getElementById('sidebarStep1');
-    var step2 = document.getElementById('sidebarStep2');
-    var step3 = document.getElementById('sidebarStep3');
-    var step4 = document.getElementById('sidebarStep4');
-
-    [step1, step2, step3, step4].forEach(function (s) {
-      if (s) s.classList.remove('active', 'completed');
-    });
-
-    if (!homepageData) {
-      step1.classList.add('active');
-    } else if (!selectedType) {
-      step1.classList.add('completed');
-      step2.classList.add('active');
-    } else if (selectedType && selectedFeatures.size === 0) {
-      step1.classList.add('completed');
-      step2.classList.add('completed');
-      step3.classList.add('active');
-    } else {
-      step1.classList.add('completed');
-      step2.classList.add('completed');
-      step3.classList.add('completed');
-      step4.classList.add('active');
-    }
-  }
-
-  function scrollToStep2() {
-    step2.classList.remove('hidden');
-    step2.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    updateProgressIndicator();
-  }
-
-  function scrollToStep1() {
-    step2.classList.add('hidden');
-    document.getElementById('step1').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    updateProgressIndicator();
-  }
-
-  function updateFeaturesSummary() {
-    var count = selectedFeatures.size;
-    if (count === 0) {
-      featuresSummaryText.textContent = 'Abhi koi feature select nahi kiya';
-    } else if (count === 1) {
-      featuresSummaryText.textContent = '1 feature select kiya hai';
-    } else {
-      featuresSummaryText.textContent = count + ' features select kiye hain';
-    }
-  }
-
-  function renderFeatures(typeId) {
-    featuresGrid.innerHTML = '';
-    selectedFeatures.clear();
-
-    var typeData = websiteTypes.find(function (t) { return t.id === typeId; });
-    if (!typeData) return;
-
-    selectedTypeName.textContent = typeData.name;
-
-    typeData.features.forEach(function (feature) {
-      var item = document.createElement('div');
-      item.className = 'feature-item';
-      item.setAttribute('data-feature', feature.label);
-
-      item.innerHTML = '<div class="feature-checkbox"><i class="fas fa-check"></i></div>' +
-        '<div class="feature-content">' +
-        '<div class="feature-label">' + feature.label + '</div>' +
-        '<div class="feature-example">Example: ' + feature.example + '</div>' +
-        '</div>';
-
-      item.addEventListener('click', function () {
-        if (selectedFeatures.has(feature.label)) {
-          selectedFeatures.delete(feature.label);
-          item.classList.remove('selected');
-        } else {
-          selectedFeatures.add(feature.label);
-          item.classList.add('selected');
-        }
-        updateFeaturesSummary();
-        updateProgressIndicator();
-      });
-
-      featuresGrid.appendChild(item);
-    });
-
-    updateFeaturesSummary();
-  }
-
   function initTypeCards() {
-    var cards = typesGrid.querySelectorAll('.type-card');
+    var cards = document.querySelectorAll('#typesGrid .type-card');
     cards.forEach(function (card) {
       card.addEventListener('click', function () {
         cards.forEach(function (c) { c.classList.remove('selected'); });
         card.classList.add('selected');
-        selectedType = card.getAttribute('data-type');
-        renderFeatures(selectedType);
-        scrollToStep2();
+        formData.websiteType = card.getAttribute('data-type');
+        saveState();
       });
+    });
+  }
+
+  function initCheckboxGrid(gridId, formKey) {
+    var items = document.querySelectorAll('#' + gridId + ' .checkbox-item');
+    items.forEach(function (item) {
+      item.addEventListener('click', function () {
+        var value = item.getAttribute('data-value');
+        var index = formData[formKey].indexOf(value);
+        if (index === -1) {
+          formData[formKey].push(value);
+          item.classList.add('selected');
+        } else {
+          formData[formKey].splice(index, 1);
+          item.classList.remove('selected');
+        }
+        saveState();
+      });
+    });
+  }
+
+  function initRadioGrid(gridId, formKey) {
+    var items = document.querySelectorAll('#' + gridId + ' .radio-card, #' + gridId + ' .radio-item');
+    items.forEach(function (item) {
+      item.addEventListener('click', function () {
+        items.forEach(function (i) { i.classList.remove('selected'); });
+        item.classList.add('selected');
+        formData[formKey] = item.getAttribute('data-value');
+        saveState();
+      });
+    });
+  }
+
+  function restoreCheckboxGrid(gridId, formKey) {
+    var items = document.querySelectorAll('#' + gridId + ' .checkbox-item');
+    items.forEach(function (item) {
+      var value = item.getAttribute('data-value');
+      if (formData[formKey].indexOf(value) !== -1) {
+        item.classList.add('selected');
+      }
+    });
+  }
+
+  function restoreRadioGrid(gridId, formKey) {
+    var items = document.querySelectorAll('#' + gridId + ' .radio-card, #' + gridId + ' .radio-item');
+    items.forEach(function (item) {
+      if (item.getAttribute('data-value') === formData[formKey]) {
+        item.classList.add('selected');
+      }
     });
   }
 
@@ -697,20 +340,29 @@
   }
 
   function buildPreviewHTML() {
-    var name = document.getElementById('reqName').value.trim() || 'Not provided';
-    var email = document.getElementById('reqEmail').value.trim() || 'Not provided';
-    var phone = document.getElementById('reqPhone').value.trim() || 'Not provided';
-    var budget = document.getElementById('reqBudget');
-    var budgetText = budget.options[budget.selectedIndex] ? budget.options[budget.selectedIndex].text : 'Not specified';
-    var service = document.getElementById('reqService');
-    var serviceText = service.options[service.selectedIndex] ? service.options[service.selectedIndex].text : 'Not specified';
-    var timeline = document.getElementById('reqTimeline');
-    var timelineText = timeline.options[timeline.selectedIndex] ? timeline.options[timeline.selectedIndex].text : 'Not specified';
-    var details = document.getElementById('reqDetails').value.trim() || 'Not provided';
-    var reference = document.getElementById('reqReference').value.trim() || 'Not provided';
-    var manual = document.getElementById('manualRequirements').value.trim() || 'Not provided';
+    var typeData = websiteTypes.find(function (t) { return t.id === formData.websiteType; });
 
-    var typeData = websiteTypes.find(function (t) { return t.id === selectedType; });
+    var budgetLabels = {
+      'under-50': 'Under $50',
+      '50-100': '$50 – $100',
+      '100-200': '$100 – $200',
+      '200-500': '$200 – $500',
+      '500-plus': '$500+',
+      'not-sure': 'Not sure'
+    };
+
+    var timelineLabels = {
+      '1-3-days': '1 – 3 days',
+      '3-7-days': '3 – 7 days',
+      '1-2-weeks': '1 – 2 weeks',
+      'flexible': 'Flexible'
+    };
+
+    var contactMethodLabels = {
+      'whatsapp': 'WhatsApp',
+      'email': 'Email',
+      'phone': 'Phone'
+    };
 
     var html = '';
 
@@ -726,143 +378,160 @@
     }
 
     html += '<div class="preview-section">';
-    html += '<h3><i class="fas fa-user"></i> Personal Information</h3>';
-    html += '<div class="preview-grid">';
-    html += '<div class="preview-item"><span class="preview-label">Name:</span><span class="preview-value">' + escapeHtml(name) + '</span></div>';
-    html += '<div class="preview-item"><span class="preview-label">Email:</span><span class="preview-value">' + escapeHtml(email) + '</span></div>';
-    html += '<div class="preview-item"><span class="preview-label">Phone:</span><span class="preview-value">' + escapeHtml(phone) + '</span></div>';
-    html += '</div></div>';
-
-    html += '<div class="preview-section">';
-    html += '<h3><i class="fas fa-cog"></i> Project Details</h3>';
-    html += '<div class="preview-grid">';
-    html += '<div class="preview-item"><span class="preview-label">Website Type:</span><span class="preview-value">' + escapeHtml(typeData ? typeData.name : selectedType) + '</span></div>';
-    html += '<div class="preview-item"><span class="preview-label">Service:</span><span class="preview-value">' + escapeHtml(serviceText) + '</span></div>';
-    html += '<div class="preview-item"><span class="preview-label">Budget:</span><span class="preview-value">' + escapeHtml(budgetText) + '</span></div>';
-    html += '<div class="preview-item"><span class="preview-label">Timeline:</span><span class="preview-value">' + escapeHtml(timelineText) + '</span></div>';
-    html += '<div class="preview-item" style="grid-column:1/-1;"><span class="preview-label">Details:</span><span class="preview-value">' + escapeHtml(details) + '</span></div>';
-    html += '<div class="preview-item" style="grid-column:1/-1;"><span class="preview-label">Reference:</span><span class="preview-value">' + escapeHtml(reference) + '</span></div>';
-    html += '</div></div>';
-
-    html += '<div class="preview-section">';
-    html += '<h3><i class="fas fa-check-square"></i> Selected Features (' + selectedFeatures.size + ')</h3>';
-    if (selectedFeatures.size > 0) {
-      html += '<ul class="preview-list">';
-      selectedFeatures.forEach(function (feature) {
-        html += '<li><i class="fas fa-check"></i> ' + escapeHtml(feature) + '</li>';
-      });
-      html += '</ul>';
-    } else {
-      html += '<p class="preview-empty">No features selected</p>';
-    }
+    html += '<h3><span class="step-badge">1</span> <i class="fas fa-globe"></i> Website Type</h3>';
+    html += '<div class="preview-item"><span class="preview-label">Type:</span><span class="preview-value">' + escapeHtml(typeData ? typeData.name : formData.websiteType) + '</span></div>';
     html += '</div>';
 
-    if (manual && manual !== 'Not provided') {
+    if (formData.goals.length > 0) {
       html += '<div class="preview-section">';
-      html += '<h3><i class="fas fa-plus-circle"></i> Additional Requirements</h3>';
-      html += '<p class="preview-manual">' + escapeHtml(manual).replace(/\n/g, '<br>') + '</p>';
+      html += '<h3><span class="step-badge">2</span> <i class="fas fa-bullseye"></i> Goals</h3>';
+      html += '<ul class="preview-list">';
+      formData.goals.forEach(function (goal) {
+        html += '<li><i class="fas fa-check"></i> ' + escapeHtml(goal) + '</li>';
+      });
+      html += '</ul></div>';
+    }
+
+    html += '<div class="preview-section">';
+    html += '<h3><span class="step-badge">3</span> <i class="fas fa-building"></i> Business Info</h3>';
+    html += '<div class="preview-grid">';
+    html += '<div class="preview-item"><span class="preview-label">Business Name:</span><span class="preview-value">' + escapeHtml(formData.businessName || 'Not provided') + '</span></div>';
+    html += '<div class="preview-item"><span class="preview-label">Category:</span><span class="preview-value">' + escapeHtml(formData.businessCategory || 'Not provided') + '</span></div>';
+    html += '<div class="preview-item" style="grid-column:1/-1;"><span class="preview-label">Description:</span><span class="preview-value">' + escapeHtml(formData.businessDescription || 'Not provided') + '</span></div>';
+    html += '<div class="preview-item"><span class="preview-label">City/Country:</span><span class="preview-value">' + escapeHtml(formData.cityCountry || 'Not provided') + '</span></div>';
+    html += '</div></div>';
+
+    if (formData.pagesNeeded.length > 0 || formData.specialFeatures) {
+      html += '<div class="preview-section">';
+      html += '<h3><span class="step-badge">4</span> <i class="fas fa-file-alt"></i> Pages & Features</h3>';
+      if (formData.pagesNeeded.length > 0) {
+        html += '<p style="font-size:0.85rem; color:var(--text-light); margin-bottom:8px;">Pages:</p>';
+        html += '<ul class="preview-list">';
+        formData.pagesNeeded.forEach(function (page) {
+          html += '<li><i class="fas fa-check"></i> ' + escapeHtml(page) + '</li>';
+        });
+        html += '</ul>';
+      }
+      if (formData.specialFeatures) {
+        html += '<div class="preview-item" style="margin-top:12px;"><span class="preview-label">Special Features:</span><span class="preview-value">' + escapeHtml(formData.specialFeatures) + '</span></div>';
+      }
       html += '</div>';
     }
+
+    html += '<div class="preview-section">';
+    html += '<h3><span class="step-badge">5</span> <i class="fas fa-palette"></i> Design</h3>';
+    html += '<div class="preview-grid">';
+    html += '<div class="preview-item"><span class="preview-label">Style:</span><span class="preview-value">' + escapeHtml(formData.designStyle || 'Not provided') + '</span></div>';
+    html += '<div class="preview-item"><span class="preview-label">Primary Color:</span><span class="preview-value"><span style="display:inline-block;width:16px;height:16px;background:' + formData.primaryColor + ';border-radius:50%;margin-right:8px;vertical-align:middle;"></span>' + escapeHtml(formData.primaryColor) + '</span></div>';
+    if (formData.referenceWebsite) {
+      html += '<div class="preview-item" style="grid-column:1/-1;"><span class="preview-label">Reference:</span><span class="preview-value">' + escapeHtml(formData.referenceWebsite) + '</span></div>';
+    }
+    html += '</div></div>';
+
+    html += '<div class="preview-section">';
+    html += '<h3><span class="step-badge">6</span> <i class="fas fa-images"></i> Content</h3>';
+    html += '<div class="preview-grid">';
+    html += '<div class="preview-item"><span class="preview-label">Logo:</span><span class="preview-value">' + escapeHtml(formData.logo || 'Not provided') + '</span></div>';
+    html += '<div class="preview-item"><span class="preview-label">Images:</span><span class="preview-value">' + escapeHtml(formData.images.length > 0 ? formData.images.join(', ') : 'Not provided') + '</span></div>';
+    html += '<div class="preview-item"><span class="preview-label">Existing Content:</span><span class="preview-value">' + escapeHtml(formData.existingContent || 'Not provided') + '</span></div>';
+    if (formData.contentReference) {
+      html += '<div class="preview-item" style="grid-column:1/-1;"><span class="preview-label">Reference Link:</span><span class="preview-value">' + escapeHtml(formData.contentReference) + '</span></div>';
+    }
+    html += '<div class="preview-item"><span class="preview-label">Content Help:</span><span class="preview-value">' + escapeHtml(formData.contentHelp || 'Not provided') + '</span></div>';
+    html += '</div></div>';
+
+    html += '<div class="preview-section">';
+    html += '<h3><span class="step-badge">7</span> <i class="fas fa-dollar-sign"></i> Budget & Timeline</h3>';
+    html += '<div class="preview-grid">';
+    html += '<div class="preview-item"><span class="preview-label">Budget:</span><span class="preview-value">' + escapeHtml(budgetLabels[formData.budget] || 'Not provided') + '</span></div>';
+    html += '<div class="preview-item"><span class="preview-label">Timeline:</span><span class="preview-value">' + escapeHtml(timelineLabels[formData.timeline] || 'Not provided') + '</span></div>';
+    html += '</div></div>';
+
+    html += '<div class="preview-section">';
+    html += '<h3><span class="step-badge">7</span> <i class="fas fa-user"></i> Contact</h3>';
+    html += '<div class="preview-grid">';
+    html += '<div class="preview-item"><span class="preview-label">Name:</span><span class="preview-value">' + escapeHtml(formData.contactName) + '</span></div>';
+    html += '<div class="preview-item"><span class="preview-label">WhatsApp:</span><span class="preview-value">' + escapeHtml(formData.contactWhatsApp) + '</span></div>';
+    html += '<div class="preview-item"><span class="preview-label">Email:</span><span class="preview-value">' + escapeHtml(formData.contactEmail) + '</span></div>';
+    html += '<div class="preview-item"><span class="preview-label">Method:</span><span class="preview-value">' + escapeHtml(contactMethodLabels[formData.contactMethod] || formData.contactMethod) + '</span></div>';
+    html += '</div></div>';
 
     return html;
   }
 
-  function escapeHtml(text) {
-    if (!text) return '';
-    return String(text)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;');
-  }
-
   function buildWhatsAppMessage() {
-    var name = document.getElementById('reqName').value.trim();
-    var email = document.getElementById('reqEmail').value.trim();
-    var phone = document.getElementById('reqPhone').value.trim();
-    var budget = document.getElementById('reqBudget').value;
-    var service = document.getElementById('reqService').value;
-    var timeline = document.getElementById('reqTimeline').value;
-    var details = document.getElementById('reqDetails').value.trim();
-    var reference = document.getElementById('reqReference').value.trim();
-    var manual = document.getElementById('manualRequirements').value.trim();
+    var typeData = websiteTypes.find(function (t) { return t.id === formData.websiteType; });
 
     var budgetLabels = {
-      'under-50k': 'Under Rs 50,000',
-      '50k-1lac': 'Rs 50,000 - 1,00,000',
-      '1lac-3lac': 'Rs 1,00,000 - 3,00,000',
-      '3lac-5lac': 'Rs 3,00,000 - 5,00,000',
-      'above-5lac': 'Above Rs 5,00,000',
-      'not-sure': 'Abhi confirm nahi'
+      'under-50': 'Under $50',
+      '50-100': '$50 – $100',
+      '100-200': '$100 – $200',
+      '200-500': '$200 – $500',
+      '500-plus': '$500+',
+      'not-sure': 'Not sure'
     };
 
     var timelineLabels = {
-      '1-week': '1 Week',
-      '2-4-weeks': '2 - 4 Weeks',
-      '1-2-months': '1 - 2 Months',
-      '3-6-months': '3 - 6 Months',
-      '6-months-plus': '6 Months+',
-      'flexible': 'Flexible / No rush'
+      '1-3-days': '1 – 3 days',
+      '3-7-days': '3 – 7 days',
+      '1-2-weeks': '1 – 2 weeks',
+      'flexible': 'Flexible'
     };
 
-    var typeData = websiteTypes.find(function (t) { return t.id === selectedType; });
-
-    var serviceLabels = {
-      'design': 'Web Design',
-      'development': 'Web Development',
-      'seo': 'SEO Optimization',
-      'ecommerce': 'E-Commerce',
-      'marketing': 'Digital Marketing',
-      'app': 'App Development'
+    var contactMethodLabels = {
+      'whatsapp': 'WhatsApp',
+      'email': 'Email',
+      'phone': 'Phone'
     };
 
-    var companySizeLabels = {
-      'startup': 'Startup (1-10)',
-      'small': 'Small Business (11-50)',
-      'medium': 'Medium (51-200)',
-      'large': 'Enterprise (200+)'
-    };
-
-    var msg = 'New ' + BUSINESS_NAME + ' Website Requirement Inquiry:%0A%0A';
+    var msg = 'New ' + BUSINESS_NAME + ' Website Requirement Inquiry:%0A';
 
     if (homepageData) {
-      msg += '=== Homepage Inquiry ===%0A';
       msg += 'Name: ' + encodeURIComponent(homepageData.name) + '%0A';
       msg += 'Email: ' + encodeURIComponent(homepageData.email) + '%0A';
       msg += 'Phone: ' + encodeURIComponent(homepageData.phone) + '%0A';
-      msg += 'Company Size: ' + encodeURIComponent(companySizeLabels[homepageData.companySize] || homepageData.companySize) + '%0A';
-      msg += '%0A';
-    } else {
-      msg += 'Name: ' + encodeURIComponent(name) + '%0A';
-      msg += 'Email: ' + encodeURIComponent(email) + '%0A';
-      msg += 'Phone: ' + encodeURIComponent(phone) + '%0A%0A';
+      msg += 'Company Size: ' + encodeURIComponent(homepageData.companySize) + '%0A';
     }
 
-    msg += '=== Requirements ===%0A';
-    msg += 'Website Type: ' + encodeURIComponent(typeData ? typeData.name : selectedType) + '%0A';
-    msg += 'Service: ' + encodeURIComponent(serviceLabels[service] || service) + '%0A';
-    msg += 'Budget: ' + encodeURIComponent(budgetLabels[budget] || 'Not specified') + '%0A';
-    msg += 'Timeline: ' + encodeURIComponent(timelineLabels[timeline] || 'Not specified') + '%0A';
-    if (details) {
-      msg += 'Details: ' + encodeURIComponent(details) + '%0A';
-    }
-    if (reference) {
-      msg += 'Reference: ' + encodeURIComponent(reference) + '%0A';
-    }
-    msg += '%0ASelected Features:%0A';
+    msg += 'Type: ' + encodeURIComponent(typeData ? typeData.name : formData.websiteType) + '%0A';
 
-    if (selectedFeatures.size > 0) {
-      selectedFeatures.forEach(function (feature) {
-        msg += '- ' + encodeURIComponent(feature) + '%0A';
-      });
-    } else {
-      msg += '- None selected%0A';
+    if (formData.goals.length > 0) {
+      msg += 'Goals: ' + encodeURIComponent(formData.goals.join(', ')) + '%0A';
     }
 
-    if (manual) {
-      msg += '%0AAdditional Requirements:%0A';
-      msg += encodeURIComponent(manual) + '%0A';
+    msg += 'Business: ' + encodeURIComponent(formData.businessName) + '%0A';
+    msg += 'Category: ' + encodeURIComponent(formData.businessCategory || 'Not provided') + '%0A';
+    msg += 'Desc: ' + encodeURIComponent(formData.businessDescription || 'Not provided') + '%0A';
+    msg += 'Location: ' + encodeURIComponent(formData.cityCountry || 'Not provided') + '%0A';
+
+    if (formData.pagesNeeded.length > 0) {
+      msg += 'Pages: ' + encodeURIComponent(formData.pagesNeeded.join(', ')) + '%0A';
     }
+    if (formData.specialFeatures) {
+      msg += 'Features: ' + encodeURIComponent(formData.specialFeatures) + '%0A';
+    }
+
+    msg += 'Style: ' + encodeURIComponent(formData.designStyle || 'Not provided') + '%0A';
+    msg += 'Color: ' + encodeURIComponent(formData.primaryColor) + '%0A';
+    if (formData.referenceWebsite) {
+      msg += 'Reference: ' + encodeURIComponent(formData.referenceWebsite) + '%0A';
+    }
+
+    msg += 'Logo: ' + encodeURIComponent(formData.logo || 'Not provided') + '%0A';
+    msg += 'Images: ' + encodeURIComponent(formData.images.length > 0 ? formData.images.join(', ') : 'Not provided') + '%0A';
+    msg += 'Content: ' + encodeURIComponent(formData.existingContent || 'Not provided') + '%0A';
+    if (formData.contentReference) {
+      msg += 'Link: ' + encodeURIComponent(formData.contentReference) + '%0A';
+    }
+    msg += 'Help: ' + encodeURIComponent(formData.contentHelp || 'Not provided') + '%0A';
+
+    msg += 'Budget: ' + encodeURIComponent(budgetLabels[formData.budget] || 'Not provided') + '%0A';
+    msg += 'Timeline: ' + encodeURIComponent(timelineLabels[formData.timeline] || 'Not provided') + '%0A';
+
+    msg += 'Name: ' + encodeURIComponent(formData.contactName) + '%0A';
+    msg += 'WhatsApp: ' + encodeURIComponent(formData.contactWhatsApp) + '%0A';
+    msg += 'Email: ' + encodeURIComponent(formData.contactEmail) + '%0A';
+    msg += 'Method: ' + encodeURIComponent(contactMethodLabels[formData.contactMethod] || formData.contactMethod) + '%0A';
 
     return msg;
   }
@@ -878,130 +547,215 @@
     document.body.style.overflow = '';
   }
 
-  function initForm() {
-    backToTypesBtn.addEventListener('click', function () {
-      scrollToStep1();
+  function resetForm() {
+    formData.currentStep = 1;
+    formData.completedSteps = [];
+    formData.websiteType = null;
+    formData.goals = [];
+    formData.businessName = '';
+    formData.businessCategory = '';
+    formData.businessDescription = '';
+    formData.cityCountry = '';
+    formData.pagesNeeded = [];
+    formData.specialFeatures = '';
+    formData.designStyle = '';
+    formData.primaryColor = '#6366f1';
+    formData.referenceWebsite = '';
+    formData.logo = null;
+    formData.images = [];
+    formData.existingContent = null;
+    formData.contentReference = '';
+    formData.contentHelp = '';
+    formData.budget = '';
+    formData.timeline = '';
+    formData.contactName = '';
+    formData.contactWhatsApp = '';
+    formData.contactEmail = '';
+    formData.contactMethod = 'whatsapp';
+
+    document.querySelectorAll('.step-panel').forEach(function (panel) {
+      panel.classList.remove('active', 'selected');
+      panel.classList.add('hidden');
     });
 
-    changeTypeBtn.addEventListener('click', function () {
-      scrollToStep1();
-      var cards = typesGrid.querySelectorAll('.type-card');
-      cards.forEach(function (c) { c.classList.remove('selected'); });
-      selectedType = null;
-      saveRequirementsState();
-      updateProgressIndicator();
+    document.querySelectorAll('.type-card, .checkbox-item, .radio-card, .radio-item').forEach(function (el) {
+      el.classList.remove('selected');
     });
 
-    selectAllFeaturesBtn.addEventListener('click', function () {
-      var items = featuresGrid.querySelectorAll('.feature-item');
-      items.forEach(function (item) {
-        var feature = item.getAttribute('data-feature');
-        selectedFeatures.add(feature);
-        item.classList.add('selected');
-      });
-      updateFeaturesSummary();
-      updateProgressIndicator();
-      saveRequirementsState();
-    });
-
-    clearAllFeaturesBtn.addEventListener('click', function () {
-      selectedFeatures.clear();
-      var items = featuresGrid.querySelectorAll('.feature-item');
-      items.forEach(function (item) {
-        item.classList.remove('selected');
-      });
-      updateFeaturesSummary();
-      updateProgressIndicator();
-      saveRequirementsState();
-    });
-
-    previewBtn.addEventListener('click', function () {
-      if (!homepageData) {
-        var name = document.getElementById('reqName').value.trim();
-        var email = document.getElementById('reqEmail').value.trim();
-        var phone = document.getElementById('reqPhone').value.trim();
-
-        if (!name || !email || !phone) {
-          showToast('Pehle apna naam, email, aur phone number fill karein.', 'error');
-          return;
-        }
-
-        if (!validateEmail(email)) {
-          showToast('Please enter a valid email address.', 'error');
-          return;
-        }
-
-        if (!validatePhone(phone)) {
-          showToast('Please enter a valid phone number.', 'error');
-          return;
-        }
+    document.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], input[type="url"], textarea').forEach(function (el) {
+      if (el.id !== 'primaryColor') {
+        el.value = '';
       }
-
-      if (!selectedType) {
-        showToast('Pehle website type select karein.', 'error');
-        return;
-      }
-
-      openPreview();
     });
 
-    previewCancel.addEventListener('click', function () {
-      closePreview();
+    document.querySelectorAll('input[type="file"]').forEach(function (el) {
+      el.value = '';
+    });
+
+    document.querySelectorAll('.file-name').forEach(function (el) {
+      el.textContent = 'No file chosen';
+    });
+
+    document.getElementById('primaryColor').value = '#6366f1';
+    document.getElementById('colorPreview').style.background = '#6366f1';
+
+    goToStep(1, 'none');
+    updateProgressBar();
+    clearState();
+  }
+
+  function init() {
+    loadHomepageData();
+    loadState();
+
+    if (!formData.completedSteps || formData.completedSteps.length === 0) {
+      formData.completedSteps = [1];
+    }
+    for (var i = 1; i <= formData.currentStep; i++) {
+      if (formData.completedSteps.indexOf(i) === -1) {
+        formData.completedSteps.push(i);
+      }
+    }
+
+    var banner = document.getElementById('homepageDataBanner');
+    var details = document.getElementById('bannerDetails');
+    if (homepageData && banner && details) {
+      details.textContent = 'Name: ' + homepageData.name + ' | Email: ' + homepageData.email + ' | Phone: ' + homepageData.phone;
+      banner.classList.remove('hidden');
+    }
+
+    initTypeCards();
+    initCheckboxGrid('goalsGrid', 'goals');
+    initCheckboxGrid('pagesGrid', 'pagesNeeded');
+    initRadioGrid('designGrid', 'designStyle');
+    initRadioGrid('contentHelpRadio', 'contentHelp');
+    initRadioGrid('budgetRadio', 'budget');
+    initRadioGrid('timelineRadio', 'timeline');
+    initRadioGrid('contactMethodRadio', 'contactMethod');
+
+    if (formData.websiteType) {
+      var cards = document.querySelectorAll('#typesGrid .type-card');
+      cards.forEach(function (card) {
+        if (card.getAttribute('data-type') === formData.websiteType) {
+          card.classList.add('selected');
+        }
+      });
+    }
+
+    restoreCheckboxGrid('goalsGrid', 'goals');
+    restoreCheckboxGrid('pagesGrid', 'pagesNeeded');
+    restoreRadioGrid('designGrid', 'designStyle');
+    restoreRadioGrid('contentHelpRadio', 'contentHelp');
+    restoreRadioGrid('budgetRadio', 'budget');
+    restoreRadioGrid('timelineRadio', 'timeline');
+    restoreRadioGrid('contactMethodRadio', 'contactMethod');
+
+    var businessNameEl = document.getElementById('businessName');
+    if (businessNameEl && formData.businessName) businessNameEl.value = formData.businessName;
+    var businessCategoryEl = document.getElementById('businessCategory');
+    if (businessCategoryEl && formData.businessCategory) businessCategoryEl.value = formData.businessCategory;
+    var businessDescriptionEl = document.getElementById('businessDescription');
+    if (businessDescriptionEl && formData.businessDescription) businessDescriptionEl.value = formData.businessDescription;
+    var cityCountryEl = document.getElementById('cityCountry');
+    if (cityCountryEl && formData.cityCountry) cityCountryEl.value = formData.cityCountry;
+    var specialFeaturesEl = document.getElementById('specialFeatures');
+    if (specialFeaturesEl && formData.specialFeatures) specialFeaturesEl.value = formData.specialFeatures;
+    var referenceWebsiteEl = document.getElementById('referenceWebsite');
+    if (referenceWebsiteEl && formData.referenceWebsite) referenceWebsiteEl.value = formData.referenceWebsite;
+    var contentReferenceEl = document.getElementById('contentReference');
+    if (contentReferenceEl && formData.contentReference) contentReferenceEl.value = formData.contentReference;
+    var contactNameEl = document.getElementById('contactName');
+    if (contactNameEl && formData.contactName) contactNameEl.value = formData.contactName;
+    var contactWhatsAppEl = document.getElementById('contactWhatsApp');
+    if (contactWhatsAppEl && formData.contactWhatsApp) contactWhatsAppEl.value = formData.contactWhatsApp;
+    var contactEmailEl = document.getElementById('contactEmail');
+    if (contactEmailEl && formData.contactEmail) contactEmailEl.value = formData.contactEmail;
+    var primaryColorEl = document.getElementById('primaryColor');
+    if (primaryColorEl && formData.primaryColor) {
+      primaryColorEl.value = formData.primaryColor;
+      var colorPreview = document.getElementById('colorPreview');
+      if (colorPreview) colorPreview.style.background = formData.primaryColor;
+    }
+
+    document.getElementById('step1Next').addEventListener('click', function () {
+      if (validateStep(1)) {
+        markStepsCompleted(1, getFurthestCompletedStep(2));
+        goToStep(getFurthestCompletedStep(2), getFurthestCompletedStep(2) > 2 ? 'none' : 'forward');
+      }
+    });
+
+    document.getElementById('step2Back').addEventListener('click', function () {
+      goToStep(1, 'back');
+    });
+
+    document.getElementById('step2Next').addEventListener('click', function () {
+      markStepsCompleted(2, getFurthestCompletedStep(3));
+      goToStep(getFurthestCompletedStep(3), getFurthestCompletedStep(3) > 3 ? 'none' : 'forward');
+    });
+
+    document.getElementById('step3Back').addEventListener('click', function () {
+      goToStep(2, 'back');
+    });
+
+    document.getElementById('step3Next').addEventListener('click', function () {
+      if (validateStep(3)) {
+        markStepsCompleted(3, getFurthestCompletedStep(4));
+        goToStep(getFurthestCompletedStep(4), getFurthestCompletedStep(4) > 4 ? 'none' : 'forward');
+      }
+    });
+
+    document.getElementById('step4Back').addEventListener('click', function () {
+      goToStep(3, 'back');
+    });
+
+    document.getElementById('step4Next').addEventListener('click', function () {
+      markStepsCompleted(4, getFurthestCompletedStep(5));
+      goToStep(getFurthestCompletedStep(5), getFurthestCompletedStep(5) > 5 ? 'none' : 'forward');
+    });
+
+    document.getElementById('step5Back').addEventListener('click', function () {
+      goToStep(4, 'back');
+    });
+
+    document.getElementById('step5Next').addEventListener('click', function () {
+      markStepsCompleted(5, getFurthestCompletedStep(6));
+      goToStep(getFurthestCompletedStep(6), getFurthestCompletedStep(6) > 6 ? 'none' : 'forward');
+    });
+
+    document.getElementById('step6Back').addEventListener('click', function () {
+      goToStep(5, 'back');
+    });
+
+    document.getElementById('step6Next').addEventListener('click', function () {
+      markStepsCompleted(6, getFurthestCompletedStep(7));
+      goToStep(getFurthestCompletedStep(7), 'forward');
+    });
+
+    document.getElementById('step7Back').addEventListener('click', function () {
+      goToStep(6, 'back');
+    });
+
+     document.getElementById('submitRequirements').addEventListener('click', function () {
+      if (validateStep(7)) openPreview();
+    });
+
+    previewCancel.addEventListener('click', closePreview);
+    previewModalClose.addEventListener('click', closePreview);
+    previewModal.addEventListener('click', function (e) {
+      if (e.target === previewModal) closePreview();
     });
 
     previewConfirm.addEventListener('click', function () {
       closePreview();
-
-      if (!homepageData) {
-        var name = document.getElementById('reqName').value.trim();
-        var email = document.getElementById('reqEmail').value.trim();
-        var phone = document.getElementById('reqPhone').value.trim();
-
-        if (!name || !email || !phone) {
-          showToast('Please fill in all required fields.', 'error');
-          return;
-        }
-
-        if (!validateEmail(email)) {
-          showToast('Please enter a valid email address.', 'error');
-          return;
-        }
-
-        if (!validatePhone(phone)) {
-          showToast('Please enter a valid phone number.', 'error');
-          return;
-        }
-      }
-
-      if (!selectedType) {
-        showToast('Please select a website type.', 'error');
-        return;
-      }
-
-      var messageText = buildWhatsAppMessage();
-      var whatsappUrl = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + messageText;
-      window.open(whatsappUrl, '_blank');
-      showToast('Redirecting to WhatsApp...', 'success');
-      clearHomepageData();
-      clearRequirementsState();
-      var banner = document.getElementById('homepageDataBanner');
-      if (banner) banner.classList.add('hidden');
-      var summary = document.getElementById('homepageSummary');
-      if (summary) summary.classList.add('hidden');
-      var personalSection = document.getElementById('personalInfoSection');
-      if (personalSection) personalSection.classList.remove('hidden');
-      selectedType = null;
-      selectedFeatures.clear();
-      updateProgressIndicator();
-    });
-
-    previewModalClose.addEventListener('click', function () {
-      closePreview();
-    });
-
-    previewModal.addEventListener('click', function (e) {
-      if (e.target === previewModal) {
-        closePreview();
+      if (validateStep(7)) {
+        var messageText = buildWhatsAppMessage();
+        var whatsappUrl = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + messageText;
+        window.open(whatsappUrl, '_blank');
+        showToast('Redirecting to WhatsApp...', 'success');
+        clearHomepageData();
+        clearState();
+        if (banner) banner.classList.add('hidden');
+        resetForm();
       }
     });
 
@@ -1009,81 +763,87 @@
       if (e.key === 'Escape' && previewModal.classList.contains('active')) {
         closePreview();
       }
+      if (e.key === 'Enter' || e.key === ' ') {
+        var target = e.target;
+        if (target.closest('.type-card, .checkbox-item, .radio-card, .radio-item')) {
+          e.preventDefault();
+          target.click();
+        }
+      }
     });
 
-    requirementsForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      previewBtn.click();
-    });
-
-    var autoSaveFields = ['reqName', 'reqEmail', 'reqPhone', 'reqBudget', 'reqService', 'reqTimeline', 'reqDetails', 'reqReference', 'manualRequirements'];
-    autoSaveFields.forEach(function (id) {
+    var textFields = ['businessName', 'businessCategory', 'businessDescription', 'cityCountry', 'specialFeatures', 'referenceWebsite', 'contentReference', 'contactName', 'contactWhatsApp', 'contactEmail'];
+    textFields.forEach(function (id) {
       var el = document.getElementById(id);
-      if (!el) return;
-      el.addEventListener('input', function () {
-        saveRequirementsState();
+      if (el) {
+        el.addEventListener('input', function () {
+          formData[id] = el.value;
+          saveState();
+        });
+      }
+    });
+
+    var colorEl = document.getElementById('primaryColor');
+    if (colorEl) {
+      colorEl.addEventListener('input', function () {
+        formData.primaryColor = colorEl.value;
+        var colorPreview = document.getElementById('colorPreview');
+        if (colorPreview) colorPreview.style.background = colorEl.value;
+        saveState();
       });
+    }
+
+    var fileFields = [
+      { id: 'logoUpload', key: 'logo', nameId: 'logoFileName', defaultText: 'No file chosen' },
+      { id: 'imagesUpload', key: 'images', nameId: 'imagesFileName', defaultText: 'No files chosen', multiple: true },
+      { id: 'existingContentUpload', key: 'existingContent', nameId: 'existingContentFileName', defaultText: 'No file chosen' }
+    ];
+
+    fileFields.forEach(function (field) {
+      var el = document.getElementById(field.id);
+      if (!el) return;
       el.addEventListener('change', function () {
-        saveRequirementsState();
-        updateProgressIndicator();
+        var nameEl = document.getElementById(field.nameId);
+        if (el.files && el.files.length > 0) {
+          if (field.multiple) {
+            var names = Array.from(el.files).map(function (f) { return f.name; });
+            formData[field.key] = names;
+            if (nameEl) nameEl.textContent = names.join(', ');
+          } else {
+            formData[field.key] = el.files[0].name;
+            if (nameEl) nameEl.textContent = el.files[0].name;
+          }
+        } else {
+          formData[field.key] = field.multiple ? [] : null;
+          if (nameEl) nameEl.textContent = field.defaultText;
+        }
+        saveState();
       });
     });
 
-    var origRenderFeatures = renderFeatures;
-    renderFeatures = function (typeId) {
-      origRenderFeatures(typeId);
-      saveRequirementsState();
-      updateProgressIndicator();
-    };
-  }
-
-  function init() {
-    loadHomepageData();
-    loadRequirementsState();
-
-    if (homepageData) {
-      var banner = document.getElementById('homepageDataBanner');
-      var details = document.getElementById('bannerDetails');
-      if (banner && details) {
-        details.textContent = 'Name: ' + homepageData.name + ' | Email: ' + homepageData.email + ' | Phone: ' + homepageData.phone;
-        banner.classList.remove('hidden');
+    progressBar.addEventListener('click', function (e) {
+      var step = e.target.closest('.progress-step');
+      if (!step) return;
+      var stepNum = parseInt(step.getAttribute('data-step'), 10);
+      if (formData.completedSteps.indexOf(stepNum) !== -1) {
+        goToStep(stepNum, stepNum < formData.currentStep ? 'back' : 'none');
       }
+    });
 
-      renderHomepageSummary();
-
-      var personalSection = document.getElementById('personalInfoSection');
-      if (personalSection) {
-        personalSection.classList.add('hidden');
+    progressBar.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        var step = e.target.closest('.progress-step');
+        if (!step) return;
+        e.preventDefault();
+        var stepNum = parseInt(step.getAttribute('data-step'), 10);
+        if (formData.completedSteps.indexOf(stepNum) !== -1) {
+          goToStep(stepNum, stepNum < formData.currentStep ? 'back' : 'none');
+        }
       }
-    }
+    });
 
-    initTypeCards();
-
-    if (requirementsState) {
-      restoreRequirementsState();
-    }
-
-    updateProgressIndicator();
-    initForm();
-  }
-
-  function renderHomepageSummary() {
-    if (!homepageData) return;
-
-    var summary = document.getElementById('homepageSummary');
-    if (!summary) return;
-
-    summary.classList.remove('hidden');
-
-    var nameEl = document.getElementById('summaryName');
-    var emailEl = document.getElementById('summaryEmail');
-    var phoneEl = document.getElementById('summaryPhone');
-    var companySizeEl = document.getElementById('summaryCompanySize');
-
-    if (nameEl) nameEl.textContent = homepageData.name || '';
-    if (emailEl) emailEl.textContent = homepageData.email || '';
-    if (phoneEl) phoneEl.textContent = homepageData.phone || '';
-    if (companySizeEl) companySizeEl.textContent = homepageData.companySize || '';
+    goToStep(formData.currentStep, 'none');
+    updateProgressBar();
   }
 
   if (document.readyState === 'loading') {
