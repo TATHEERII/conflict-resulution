@@ -1522,3 +1522,148 @@ body {
     width: 100%;
     justify-content: center;
 }
+
+/* ================= SERVICES PAGE ================= */
+.services-page {
+    min-height: calc(100vh - 76px);
+    padding: 15px 9% 20px;
+    background:
+        radial-gradient(circle at 5% 8%, rgba(110, 80, 255, .09), transparent 18%),
+        radial-gradient(circle at 95% 12%, rgba(120, 90, 255, .08), transparent 20%),
+        #fafbff;
+}
+
+.services-section {
+    max-width: 1080px;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.service-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: var(--transition);
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.service-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 22px;
+    margin-bottom: 16px;
+}
+
+.service-icon.purple-icon {
+    background: linear-gradient(135deg, var(--purple), var(--purple-light));
+}
+
+.service-icon.blue-icon {
+    background: linear-gradient(135deg, var(--blue), var(--blue-light));
+}
+
+.service-icon.green-icon {
+    background: linear-gradient(135deg, var(--green), var(--green-light));
+}
+
+.service-icon.orange-icon {
+    background: linear-gradient(135deg, var(--orange), var(--orange-light));
+}
+
+.service-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.service-features {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.service-features li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text);
+    font-weight: 500;
+}
+
+.service-features li i {
+    color: var(--green);
+    font-size: 0.75rem;
+}
+
+/* ================= RESPONSIVE - SERVICES ================= */
+@media (max-width: 950px) {
+    .services-page {
+        padding: 30px 25px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-features {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .services-page {
+        padding: 25px 15px;
+    }
+
+    .service-card {
+        padding: 22px;
+    }
+
+    .service-card h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* ================= ANIMATIONS ================= */
+.service-card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.service-card:nth-child(1) { animation-delay: 0.1s; }
+.service-card:nth-child(2) { animation-delay: 0.2s; }
+.service-card:nth-child(3) { animation-delay: 0.3s; }
+.service-card:nth-child(4) { animation-delay: 0.4s; }
+.service-card:nth-child(5) { animation-delay: 0.5s; }
+.service-card:nth-child(6) { animation-delay: 0.6s; }
+.service-card:nth-child(7) { animation-delay: 0.7s; }
+.service-card:nth-child(8) { animation-delay: 0.8s; }
